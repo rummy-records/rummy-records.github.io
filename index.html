@@ -81,6 +81,15 @@
   .pcard .prow img { width:72px; height:72px; border-radius:10px; object-fit:cover; flex:none;
     box-shadow:0 2px 6px rgba(40,50,60,.25); background:#9aa7b1; }
   .pcard .pmain { flex:1; min-width:0; }
+  a.pmain { text-decoration:none; color:inherit; display:block; }
+  a.pmain:hover .pttl { color:var(--accent); }
+  .pjack { position:relative; flex:none; cursor:pointer; border-radius:10px; }
+  .pjack img { display:block; }
+  .pover { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; border-radius:10px; background:rgba(24,30,36,.38); opacity:0; transition:opacity .18s ease; pointer-events:none; }
+  .pbadge { width:42px; height:42px; border-radius:50%; background:rgba(255,255,255,.94); display:flex; align-items:center; justify-content:center; box-shadow:0 4px 14px rgba(20,26,32,.35); transform:scale(.85); transition:transform .18s ease; }
+  @media (hover:hover) { .pjack:hover .pover { opacity:1; } .pjack:hover .pbadge { transform:scale(1); } }
+  .pjack.playing { cursor:default; }
+  .pjack.playing .pover { opacity:0; }
   .pcard .pttl { font-size:15px; font-weight:600; line-height:1.45; }
   .pcard .part { font-size:12px; color:var(--muted); margin-top:2px; }
   .pcard .pmeta { font-size:11px; color:var(--muted); margin-top:2px; letter-spacing:.05em; }
@@ -129,14 +138,17 @@
   <div class="randwrap"><button class="randbtn" id="randbtn" type="button" aria-expanded="false"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"></polyline><line x1="4" y1="20" x2="21" y2="3"></line><polyline points="21 16 21 21 16 21"></polyline><line x1="15" y1="15" x2="21" y2="21"></line><line x1="4" y1="4" x2="9" y2="9"></line></svg>シャッフル試聴</button></div>
   <div class="pwrap" id="pcard"><div class="pclip"><div class="pcard">
     <div class="prow">
-      <img id="pimg" src="" alt="">
-      <div class="pmain">
+      <div class="pjack" id="pjack" role="button" tabindex="0" aria-label="試聴を再生">
+        <img id="pimg" src="" alt="">
+        <span class="pover"><span class="pbadge"><svg width="16" height="16" viewBox="0 0 24 24" fill="#20262c" aria-hidden="true"><path d="M7 4.8v14.4c0 .9 1 1.5 1.8 1L20 13a1.2 1.2 0 0 0 0-2L8.8 3.9C8 3.4 7 4 7 4.8z"/></svg></span></span>
+      </div>
+      <a class="pmain" id="pmain" href="#">
         <div class="pttl" id="pttl"></div>
         <div class="part" id="part"></div>
         <div class="pmeta" id="pmeta"></div>
-      </div>
+      </a>
     </div>
-    <iframe id="pframe" title="Bandcamp player" loading="lazy" seamless></iframe>
+    <iframe id="pframe" title="Bandcamp player" loading="lazy" allow="autoplay" seamless></iframe>
     <div class="pbtns">
       <a class="pbtn" id="ppage" href="#">この作品のページへ</a>
       <button class="pbtn" id="pagain" type="button"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 5l8.5 7L6 19z"/><rect x="16.4" y="5" width="2.6" height="14" rx="0.6"/></svg>もう一曲</button>
@@ -213,7 +225,8 @@
     var img = document.getElementById('pimg'), ttl = document.getElementById('pttl'),
         art = document.getElementById('part'), meta = document.getElementById('pmeta'),
         frame = document.getElementById('pframe'), page = document.getElementById('ppage'),
-        again = document.getElementById('pagain');
+        again = document.getElementById('pagain'),
+        jack = document.getElementById('pjack'), pmain = document.getElementById('pmain');
     var last = -1, isOpen = false;
     function pick() {
       var i;
@@ -224,6 +237,8 @@
       ttl.textContent = r.t; art.textContent = r.a;
       meta.textContent = r.c + ' ・ ' + r.d;
       page.href = r.f + '.html';
+      pmain.href = r.f + '.html';
+      jack.classList.remove('playing');
       frame.src = 'https://bandcamp.com/EmbeddedPlayer/album=' + r.id + '/size=small/bgcol=ffffff/linkcol=c67223/transparent=true/';
     }
     function openCard() {
@@ -241,6 +256,16 @@
     }
     btn.addEventListener('click', function () { if (isOpen) closeCard(); else openCard(); });
     again.addEventListener('click', pick);
+    function playPreview() {
+      var r = BC[last];
+      if (!r) return;
+      frame.src = 'https://bandcamp.com/EmbeddedPlayer/album=' + r.id + '/size=small/bgcol=ffffff/linkcol=c67223/transparent=true/autoplay=true/';
+      jack.classList.add('playing');
+    }
+    jack.addEventListener('click', playPreview);
+    jack.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); playPreview(); }
+    });
   })();
 </script>
 
