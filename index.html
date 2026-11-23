@@ -23,9 +23,11 @@
   .year { font-size:11px; letter-spacing:.3em; color:var(--accent); font-weight:600; margin:10px 0 4px;
     position:sticky; top:8px; z-index:5; padding-left:2px; }
   .year span { display:inline-block; width:64px; box-sizing:border-box; text-align:center; padding:5px 0 5px .3em; border-radius:10px;
-    background:rgba(255,255,255,.65); border:1px solid var(--line);
+    background:transparent; border:1px solid transparent; box-shadow:none;
+    transition:background .25s ease, box-shadow .25s ease; }
+  .year.stuck span { background:rgba(255,255,255,.65);
     -webkit-backdrop-filter:blur(14px) saturate(1.2); backdrop-filter:blur(14px) saturate(1.2);
-    box-shadow:0 2px 8px rgba(40,50,60,.10), inset 0 1px 0 rgba(255,255,255,.65); }
+    box-shadow:0 2px 8px rgba(40,50,60,.10); }
   .row { display:flex; align-items:center; gap:12px; padding:9px 2px; border-bottom:1px solid var(--line-dark);
     text-decoration:none; color:var(--ink); }
   .row:last-child { border-bottom:none; }
@@ -115,7 +117,7 @@
     .navpanel { box-shadow:0 12px 30px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.14); }
     .navpanel a:hover { background:rgba(255,255,255,.10); }
     footer, footer a { color:#9AA5AD; }
-    .year span { background:rgba(42,49,56,.65); box-shadow:0 2px 8px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.14); }
+    .year.stuck span { background:rgba(42,49,56,.65); box-shadow:0 2px 8px rgba(0,0,0,.35); }
     .row img, .pcard .prow img { background:#39424B; }
     .row .stop { color:#9AA5AD; border-color:rgba(154,165,173,.4); }
     .randbtn { background:rgba(255,255,255,.07); box-shadow:0 6px 18px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.14); }
@@ -217,6 +219,20 @@
       }
       mbAnim = requestAnimationFrame(step);
     }
+  })();
+</script>
+
+<script>
+  (function () {
+    if (!('IntersectionObserver' in window)) return;
+    document.querySelectorAll('.year').forEach(function (y) {
+      var s = document.createElement('div');
+      s.style.cssText = 'height:1px;margin-bottom:-1px;';
+      y.parentNode.insertBefore(s, y);
+      new IntersectionObserver(function (e) {
+        y.classList.toggle('stuck', !e[0].isIntersecting);
+      }, { rootMargin: '-9px 0px 0px 0px' }).observe(s);
+    });
   })();
 </script>
 
