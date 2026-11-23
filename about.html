@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About us — rummy records</title>
+<style>
+  :root { --bg:#C6CED4; --ink:#000; --accent:#C67223; --muted:#454b50;
+    --line:rgba(255,255,255,.55); --line-dark:rgba(70,80,88,.14); --glass:rgba(255,255,255,.65); }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { min-height:100vh; background:var(--bg); color:var(--ink);
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+    line-height:1.6; display:flex; flex-direction:column; align-items:center; padding:40px 16px 48px; }
+  .label { font-family:Georgia,"Times New Roman","Hiragino Mincho ProN","Yu Mincho",serif;
+    font-size:19px; letter-spacing:.22em; text-align:center; margin-bottom:8px; padding-left:.22em;
+    text-shadow:0 -1px 1px rgba(255,255,255,.45), 0 2px 5px rgba(40,50,60,.28), 0 12px 24px rgba(40,50,60,.32); }
+  .sub { text-align:center; color:var(--muted); font-size:12px; letter-spacing:.3em; margin-bottom:22px; }
+  .card { width:100%; max-width:560px; background:var(--glass);
+    -webkit-backdrop-filter:blur(14px) saturate(1.2); backdrop-filter:blur(14px) saturate(1.2);
+    border:1px solid var(--line); border-radius:20px;
+    box-shadow:0 12px 34px rgba(40,50,60,.22), inset 0 1px 0 rgba(255,255,255,.65); padding:26px 26px 22px; }
+  .card p { font-size:14.5px; line-height:2.0; margin-bottom:18px; }
+  .card h2 { font-size:11px; letter-spacing:.3em; color:var(--accent); font-weight:600; margin:24px 0 8px; }
+  .card ul { list-style:none; }
+  .card li { padding:6px 0; border-bottom:1px solid var(--line-dark); font-size:14px; }
+  .card li:last-child { border-bottom:none; }
+  .card a { color:var(--ink); text-decoration:underline; text-underline-offset:3px; }
+  .card a:hover { color:var(--accent); }
+  .card .role { color:var(--muted); font-size:12px; }
+  footer { margin-top:26px; text-align:center; font-size:12px; color:#33383c; }
+  footer a { color:#33383c; } footer a:hover { color:var(--accent); }
+  .navbtn { position:fixed; top:12px; right:12px; z-index:30; width:42px; height:42px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center; background:var(--glass); border:1px solid var(--line);
+    -webkit-backdrop-filter:blur(14px) saturate(1.2); backdrop-filter:blur(14px) saturate(1.2);
+    box-shadow:0 6px 18px rgba(40,50,60,.18), inset 0 1px 0 rgba(255,255,255,.65); cursor:pointer; color:var(--ink); }
+  .navpanel { position:fixed; top:62px; right:12px; z-index:30; min-width:190px; padding:8px;
+    background:var(--glass); border:1px solid var(--line); border-radius:14px;
+    -webkit-backdrop-filter:blur(14px) saturate(1.2); backdrop-filter:blur(14px) saturate(1.2);
+    box-shadow:0 12px 30px rgba(40,50,60,.25), inset 0 1px 0 rgba(255,255,255,.65);
+    display:flex; flex-direction:column; opacity:0; transform:translateY(-6px); pointer-events:none;
+    transition:opacity .18s ease, transform .18s ease; }
+  .navpanel.open { opacity:1; transform:translateY(0); pointer-events:auto; }
+  .navpanel a { padding:10px 12px; border-radius:9px; color:var(--ink); text-decoration:none; font-size:14px; font-weight:600; }
+  .navpanel a:hover { background:rgba(255,255,255,.55); color:var(--accent); }
+</style>
+</head>
+<body>
+  <button class="navbtn" id="navbtn" aria-label="メニュー" aria-expanded="false">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></svg>
+  </button>
+  <nav class="navpanel" id="navpanel" aria-hidden="true">
+    <a href="index.html">Discography</a>
+    <a href="about.html">About us</a>
+    <a href="news.html">NEWS</a>
+  </nav>
+
+  <div class="label">rummy records</div>
+  <div class="sub">ABOUT US</div>
+  <div class="card">
+    <p>rummy records (ラミーレコーズ)<br>
+    大阪大学 音楽制作サークル ラムレーズンのメンバーにより<br>
+    2015年1月に設立された<br>
+    ダンスミュージックを中心とする電子音楽専門ネットレーベル。</p>
+    <p>クラブカルチャーに馴染みのないリスナーにも聞きやすく<br>
+    トラックメイカーにとって新しい発見のある<br>
+    コアでキャッチーな楽曲を発信する。</p>
+    <h2>SNS</h2>
+    <ul>
+      <li><a href="https://twitter.com/rummyrecords">Twitter</a></li>
+      <li><a href="https://soundcloud.com/rummyrecords">SoundCloud</a></li>
+      <li><a href="https://www.youtube.com/channel/UC4yE1cB4NwUvvX1VqQ3Zqg">YouTube</a></li>
+      <li><a href="https://rummyrecords.bandcamp.com/">Bandcamp</a></li>
+    </ul>
+    <h2>MEMBER</h2>
+    <ul>
+      <li><a href="https://twitter.com/Nennen_xxx">Nennen</a> <span class="role">(Organizer)</span></li>
+      <li><a href="https://twitter.com/zero_yon_nana">zero yon nana</a> <span class="role">(Co-organizer)</span></li>
+      <li><a href="https://twitter.com/BSer_Lingi">BSer / Lingi</a></li>
+      <li><a href="https://twitter.com/dusKape">dusKape</a></li>
+      <li><a href="https://twitter.com/nurumayu">nurumayu</a></li>
+    </ul>
+  </div>
+  <footer>
+    <a href="https://rummyrecords.bandcamp.com/">Bandcamp</a> ・ <a href="https://twitter.com/rummyrecords">X (Twitter)</a> ・ <a href="https://soundcloud.com/rummy-records">SoundCloud</a> ・ <a href="https://www.youtube.com/@rummyrecords">YouTube</a>
+  </footer>
+<script>
+  (function () {
+    var navbtn = document.getElementById('navbtn');
+    var navpanel = document.getElementById('navpanel');
+    if (!navbtn || !navpanel) return;
+    navbtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var open = navpanel.classList.toggle('open');
+      navbtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      navpanel.setAttribute('aria-hidden', open ? 'false' : 'true');
+    });
+    document.addEventListener('click', function (e) {
+      if (!navpanel.contains(e.target)) {
+        navpanel.classList.remove('open');
+        navbtn.setAttribute('aria-expanded', 'false');
+        navpanel.setAttribute('aria-hidden', 'true');
+      }
+    });
+  })();
+</script>
+
+</body>
+</html>
