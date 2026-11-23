@@ -212,6 +212,23 @@
     .store { padding:12px 14px; font-size:14px; }
     .store img { width:24px; height:24px; }
   }
+  .tagline.cont { border-top:none; padding-top:0; margin-top:14px; }
+  .track .tgenre { color:var(--accent); margin-left:7px; font-size:11px; letter-spacing:.04em; }
+  .track .tnote { color:var(--muted); font-size:11px; margin-top:1px; }
+  .sect { margin-top:26px; border-top:1px solid var(--line-dark); padding-top:18px; }
+  .sect h2 { font-size:11px; letter-spacing:.3em; color:var(--accent); text-align:center; margin-bottom:10px; font-weight:600; }
+  .srow { display:flex; gap:10px; font-size:12.5px; padding:5px 2px; border-bottom:1px solid var(--line-dark); }
+  .srow:last-child { border-bottom:none; }
+  .srow .role { color:var(--muted); flex:none; }
+  .srow .sname { font-weight:600; }
+  details.lyr { border-bottom:1px solid var(--line-dark); padding:9px 2px; }
+  details.lyr:last-child { border-bottom:none; }
+  details.lyr summary { cursor:pointer; font-weight:600; font-size:13.5px; list-style:none; display:flex; align-items:center; gap:8px; }
+  details.lyr summary::-webkit-details-marker { display:none; }
+  details.lyr summary::after { content:""; margin-left:auto; flex:none; width:8px; height:8px; border-right:2px solid #7d868e; border-bottom:2px solid #7d868e; transform:rotate(45deg); transition:transform .18s; }
+  details.lyr[open] summary::after { transform:rotate(225deg); }
+  .lyric { white-space:pre-line; font-size:12.5px; line-height:1.95; color:#26292b; padding:10px 2px 6px; }
+  .xfade iframe { width:100%; height:166px; border:0; border-radius:10px; display:block; }
 </style>
 </head>
 <body>
@@ -252,14 +269,18 @@
 
     <div class="tracks">
       <h2>TRACKS</h2>
-      <div class="track"><span class="no">1</span><div><div class="tname">OUTRIGHT LIE</div><div class="tartist">047</div></div></div>
-      <div class="track"><span class="no">2</span><div><div class="tname">White Evil</div><div class="tartist">BSer</div></div></div>
-      <div class="track"><span class="no">3</span><div><div class="tname">Xaxatorte</div><div class="tartist">dusKape</div></div></div>
-      <div class="track"><span class="no">4</span><div><div class="tname">dance music</div><div class="tartist">Nennen</div></div></div>
-      <div class="track"><span class="no">5</span><div><div class="tname">Hearthfire</div><div class="tartist">nurumayu</div></div></div>
+      <div class="track"><span class="no">1</span><div><div class="tname">OUTRIGHT LIE</div><div class="tartist">047<span class="tgenre">Electro Pop</span></div></div></div>
+      <div class="track"><span class="no">2</span><div><div class="tname">White Evil</div><div class="tartist">BSer<span class="tgenre">Melodic Dubstep</span></div></div></div>
+      <div class="track"><span class="no">3</span><div><div class="tname">Xaxatorte</div><div class="tartist">dusKape<span class="tgenre">Electro House</span></div></div></div>
+      <div class="track"><span class="no">4</span><div><div class="tname">dance music</div><div class="tartist">Nennen<span class="tgenre">Electronica</span></div></div></div>
+      <div class="track"><span class="no">5</span><div><div class="tname">Hearthfire</div><div class="tartist">nurumayu<span class="tgenre">Complextro</span></div></div></div>
     </div>
 
-    <p class="tagline">rummy records第1弾リリースは、テクノポップからエレクトロニカまで、レーベルカラーを強く打ち出した5曲がパッケージングされたEP「rummy DEMO」。</p>
+
+    <p class="tagline">rummy records、始動</p>
+    <p class="tagline cont">1995年、Microsoft Windows 95発売。電子頭脳は誰もがその手に、夢みるネットワーク、世界規模の伝達。</p>
+    <p class="tagline cont">2015年、デジタルネイティブ第1世代らによりネットレーベル「rummy records」設立。進化するコンピュータ、変わらぬシュプレヒコール。第1弾リリースはレーベルカラーを強く打ち出した5曲がパッケージングされたEP「rummy DEMO」。</p>
+    <p class="tagline cont">rummy records第1弾リリースは、テクノポップからエレクトロニカまで、レーベルカラーを強く打ち出した5曲がパッケージングされたEP「rummy DEMO」。</p>
     <p class="license"><img src="https://cdn.simpleicons.org/creativecommons" alt="" width="16" height="16">この作品は <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a> ライセンスで提供されています</p>
   </div>
 

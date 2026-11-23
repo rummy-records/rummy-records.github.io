@@ -212,6 +212,23 @@
     .store { padding:12px 14px; font-size:14px; }
     .store img { width:24px; height:24px; }
   }
+  .tagline.cont { border-top:none; padding-top:0; margin-top:14px; }
+  .track .tgenre { color:var(--accent); margin-left:7px; font-size:11px; letter-spacing:.04em; }
+  .track .tnote { color:var(--muted); font-size:11px; margin-top:1px; }
+  .sect { margin-top:26px; border-top:1px solid var(--line-dark); padding-top:18px; }
+  .sect h2 { font-size:11px; letter-spacing:.3em; color:var(--accent); text-align:center; margin-bottom:10px; font-weight:600; }
+  .srow { display:flex; gap:10px; font-size:12.5px; padding:5px 2px; border-bottom:1px solid var(--line-dark); }
+  .srow:last-child { border-bottom:none; }
+  .srow .role { color:var(--muted); flex:none; }
+  .srow .sname { font-weight:600; }
+  details.lyr { border-bottom:1px solid var(--line-dark); padding:9px 2px; }
+  details.lyr:last-child { border-bottom:none; }
+  details.lyr summary { cursor:pointer; font-weight:600; font-size:13.5px; list-style:none; display:flex; align-items:center; gap:8px; }
+  details.lyr summary::-webkit-details-marker { display:none; }
+  details.lyr summary::after { content:""; margin-left:auto; flex:none; width:8px; height:8px; border-right:2px solid #7d868e; border-bottom:2px solid #7d868e; transform:rotate(45deg); transition:transform .18s; }
+  details.lyr[open] summary::after { transform:rotate(225deg); }
+  .lyric { white-space:pre-line; font-size:12.5px; line-height:1.95; color:#26292b; padding:10px 2px 6px; }
+  .xfade iframe { width:100%; height:166px; border:0; border-radius:10px; display:block; }
 </style>
 </head>
 <body>
@@ -243,6 +260,7 @@
     <p class="artist">Various Artists</p>
     <p class="meta"><span>RMMY-005</span><span>2015-10-25</span></p>
     <p class="credits">Artwork: 047, Metropolis (1927)</p>
+    <p class="credits">M3-2015秋 G-04a ・ ￥500</p>
 
     <div class="stores">
       <a class="store" href="https://rummyrecords.bandcamp.com/album/rummy2-metropolis"><img src="https://cdn.simpleicons.org/bandcamp" alt="" width="26" height="26"><span class="name">Bandcamp</span><span class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span></a>
@@ -252,20 +270,22 @@
 
     <div class="tracks">
       <h2>TRACKS</h2>
-      <div class="track"><span class="no">1</span><div><div class="tname">Last In, First Out, Communication</div><div class="tartist">Nennen</div></div></div>
-      <div class="track"><span class="no">2</span><div><div class="tname">SIGNAL MAN</div><div class="tartist">047</div></div></div>
-      <div class="track"><span class="no">3</span><div><div class="tname">Stylu-S-Lusty</div><div class="tartist">BJ.chika</div></div></div>
-      <div class="track"><span class="no">4</span><div><div class="tname">sparse</div><div class="tartist">dusKape</div></div></div>
-      <div class="track"><span class="no">5</span><div><div class="tname">eu topos</div><div class="tartist">AppleMintia</div></div></div>
-      <div class="track"><span class="no">6</span><div><div class="tname">Tha Palace at 4 a.m.</div><div class="tartist">farbtafel</div></div></div>
-      <div class="track"><span class="no">7</span><div><div class="tname">Teiresias</div><div class="tartist">よことも</div></div></div>
-      <div class="track"><span class="no">8</span><div><div class="tname">Topology Space</div><div class="tartist">nurumayu</div></div></div>
-      <div class="track"><span class="no">9</span><div><div class="tname">Neo Dystopia</div><div class="tartist">BSer</div></div></div>
-      <div class="track"><span class="no">10</span><div><div class="tname">Past Phantom</div><div class="tartist">Raveile</div></div></div>
-      <div class="track"><span class="no">11</span><div><div class="tname">Luna City</div><div class="tartist">inphey</div></div></div>
+      <div class="track"><span class="no">1</span><div><div class="tname">Last In, First Out, Communication</div><div class="tartist">Nennen<span class="tgenre">Electronica</span></div></div></div>
+      <div class="track"><span class="no">2</span><div><div class="tname">SIGNAL MAN</div><div class="tartist">047<span class="tgenre">Techno Pop</span></div></div></div>
+      <div class="track"><span class="no">3</span><div><div class="tname">Stylu-S-Lusty</div><div class="tartist">BJ.chika<span class="tgenre">Liquid</span></div><div class="tnote">Guest</div></div></div>
+      <div class="track"><span class="no">4</span><div><div class="tname">sparse</div><div class="tartist">dusKape<span class="tgenre">EDM</span></div></div></div>
+      <div class="track"><span class="no">5</span><div><div class="tname">eu topos</div><div class="tartist">AppleMintia<span class="tgenre">Progressive Trance</span></div><div class="tnote">Guest</div></div></div>
+      <div class="track"><span class="no">6</span><div><div class="tname">Tha Palace at 4 a.m.</div><div class="tartist">farbtafel<span class="tgenre">Electronica</span></div><div class="tnote">Guest</div></div></div>
+      <div class="track"><span class="no">7</span><div><div class="tname">Teiresias</div><div class="tartist">よことも<span class="tgenre">EDM</span></div><div class="tnote">Guest</div></div></div>
+      <div class="track"><span class="no">8</span><div><div class="tname">Topology Space</div><div class="tartist">nurumayu<span class="tgenre">Complextro</span></div></div></div>
+      <div class="track"><span class="no">9</span><div><div class="tname">Neo Dystopia</div><div class="tartist">BSer<span class="tgenre">Neuro Funk</span></div></div></div>
+      <div class="track"><span class="no">10</span><div><div class="tname">Past Phantom</div><div class="tartist">Raveile<span class="tgenre">Hardcore</span></div><div class="tnote">Guest</div></div></div>
+      <div class="track"><span class="no">11</span><div><div class="tname">Luna City</div><div class="tartist">inphey<span class="tgenre">Electro House</span></div><div class="tnote">Guest</div></div></div>
     </div>
 
-    <p class="tagline">実力派ゲスト6名を招いて制作された全11曲のフルアルバム。</p>
+
+    <p class="tagline">「脳と手の媒介者は、心でなくてはならない」<br>ゴシック調の摩天楼は過去を見つめた。<br>LIFO、最初は幾何学、心は最後。<br>月の光、青信号、午前四時の鐘が鳴る。<br>ディストピアも、ユートピアも、メトロポリスの明日は―――</p>
+    <p class="tagline cont">実力派ゲスト6名を招いて制作された全11曲のフルアルバム。</p>
   </div>
 
   <footer>
