@@ -73,10 +73,11 @@
     font-family:inherit; font-size:13px; font-weight:600; letter-spacing:.14em; cursor:pointer;
     transition:background .15s ease, border-color .15s ease; }
   .randbtn:hover { background:rgba(255,255,255,.62); border-color:var(--accent); }
-  .pwrap { display:grid; grid-template-rows:0fr; width:100%; max-width:560px;
+  .pwrap { display:grid; grid-template-rows:0fr; width:100%; max-width:560px; position:relative; z-index:3;
     transition:grid-template-rows .48s cubic-bezier(.4,0,.2,1); }
   .pwrap.open { grid-template-rows:1fr; }
   .pclip { overflow:hidden; min-height:0; }
+  .pwrap.settled .pclip { overflow:visible; }
   .pcard { background:var(--glass); margin-bottom:16px;
     -webkit-backdrop-filter:blur(14px) saturate(1.2); backdrop-filter:blur(14px) saturate(1.2);
     border:1px solid var(--line); border-radius:20px;
@@ -276,12 +277,14 @@
       pick();
       isOpen = true;
       card.classList.add('open');
+      setTimeout(function () { if (isOpen) card.classList.add('settled'); }, 540);
       btn.setAttribute('aria-expanded', 'true');
       card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
     function closeCard() {
       isOpen = false;
       card.classList.remove('open');
+      card.classList.remove('settled');
       frame.src = 'about:blank';
       btn.setAttribute('aria-expanded', 'false');
     }
