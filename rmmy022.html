@@ -58,7 +58,7 @@
   .minibar {
     position:fixed; top:0; left:0; right:0; z-index:10;
     display:flex; justify-content:center;
-    padding:8px 12px;
+    padding:12px 12px 8px;
     pointer-events:none;
     opacity:0; filter:blur(8px); -webkit-filter:blur(8px); transform:scale(.985);
     transition:opacity .5s ease, filter .5s ease, -webkit-filter .5s ease, transform .5s ease;
@@ -74,8 +74,9 @@
   .minibar-inner {
     width:100%; max-width:420px;
     display:flex; align-items:center; gap:10px;
-    padding:7px 12px 7px 8px;
-    background:var(--glass);
+    height:42px; box-sizing:border-box;
+    padding:3px 12px 3px 6px;
+    background:rgba(255,255,255,.85);
     -webkit-backdrop-filter:blur(14px) saturate(1.2);
     backdrop-filter:blur(14px) saturate(1.2);
     border:1px solid var(--line);
@@ -88,11 +89,11 @@
   }
   .minibar .mtitle {
     flex:1; min-width:0;
-    font-size:13px; font-weight:600; line-height:1.35;
+    font-size:12px; font-weight:600; line-height:1.35;
     white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
   }
   .minibar .martist {
-    font-size:11px; font-weight:400; color:var(--muted);
+    font-size:10.5px; font-weight:400; color:var(--muted);
     white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
   }
   .label { text-decoration:none; color:var(--ink);
