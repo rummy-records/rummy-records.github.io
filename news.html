@@ -58,9 +58,9 @@
       --line:rgba(255,255,255,.16); --line-dark:rgba(255,255,255,.10); --glass:rgba(42,49,56,.65); }
     .label { position:relative; z-index:0; color:#000; text-shadow:0 2px 2px rgba(0,0,0,.35), 0 6px 12px rgba(0,0,0,.30); transition:text-shadow 1s ease; }
     .label::before { content:""; position:absolute; left:50%; top:50%; transform:translate(-50%,calc(-50% + 23px)); width:min(500px,94vw); height:250px; border-radius:50%; pointer-events:none; z-index:-1; filter:blur(8px); transition:filter 1s ease, transform 1s ease;
-      background:radial-gradient(64px 24px at 50% 6px, rgba(255,252,240,.80), rgba(255,252,240,0) 70%), radial-gradient(closest-side, rgba(255,246,226,.62), rgba(255,230,182,.34) 46%, rgba(222,164,96,.13) 72%, rgba(217,138,61,0) 100%); }
+      background:radial-gradient(64px 24px at 50% 6px, rgba(248,251,255,.92), rgba(248,251,255,0) 70%), radial-gradient(closest-side, rgba(238,244,255,.74), rgba(214,228,252,.40) 46%, rgba(168,192,232,.16) 72%, rgba(150,175,220,0) 100%); }
     @media (hover:hover) {
-      .label:hover { text-shadow:0 0 8px rgba(255,244,224,.65), 0 0 22px rgba(255,214,150,.55), 0 0 48px rgba(217,138,61,.45), 0 2px 2px rgba(0,0,0,.35), 0 6px 12px rgba(0,0,0,.30); }
+      .label:hover { text-shadow:0 0 8px rgba(240,246,255,.70), 0 0 22px rgba(205,224,255,.55), 0 0 48px rgba(160,185,230,.45), 0 2px 2px rgba(0,0,0,.35), 0 6px 12px rgba(0,0,0,.30); }
       .label:hover::before { filter:blur(8px) brightness(1.45); transform:translate(-50%,calc(-50% + 23px)) scale(1.07); }
     }
     .card { box-shadow:0 12px 34px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.14); }
