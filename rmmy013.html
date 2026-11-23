@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>-Degistalgia- デジスタルジア — rummy records</title>
+<style>
+  :root {
+    --bg:#C6CED4;
+    --ink:#000000;
+    --accent:#C67223;
+    --muted:#454b50;
+    --line:rgba(255,255,255,.55);
+    --line-dark:rgba(70,80,88,.14);
+    --glass:rgba(255,255,255,.65);
+    --glass-strong:rgba(255,255,255,.68);
+    --glass-btn:rgba(255,255,255,.42);
+    --dead-bg:rgba(226,231,234,.5);
+    --dead-line:rgba(120,130,138,.45);
+    --dead-ink:#79828a;
+  }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body {
+    min-height:100vh;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+    line-height:1.6;
+    display:flex; flex-direction:column; align-items:center;
+    padding:40px 16px 48px;
+    position:relative;
+    overflow-x:hidden;
+  }
+  .bg-glow {
+    position:fixed; inset:0; z-index:-1; overflow:hidden;
+    background:
+      radial-gradient(60% 45% at 50% 0%, rgba(255,255,255,.5), rgba(255,255,255,0) 70%),
+      var(--bg);
+  }
+  .bg-glow::before, .bg-glow::after {
+    content:""; position:absolute; border-radius:50%;
+    filter:blur(70px); -webkit-filter:blur(70px);
+  }
+  .bg-glow::before {
+    width:480px; height:480px; left:-120px; top:6%;
+    background:radial-gradient(circle, rgba(198,114,35,.5), rgba(198,114,35,0) 68%);
+  }
+  .bg-glow::after {
+    width:560px; height:560px; right:-160px; bottom:-8%;
+    background:radial-gradient(circle, rgba(240,244,246,.85), rgba(240,244,246,0) 68%);
+  }
+  .bg-glow .blob {
+    position:absolute; width:380px; height:380px; border-radius:50%;
+    right:6%; top:-120px;
+    background:radial-gradient(circle, rgba(150,168,182,.65), rgba(150,168,182,0) 68%);
+    filter:blur(60px); -webkit-filter:blur(60px);
+  }
+  .minibar {
+    position:fixed; top:0; left:0; right:0; z-index:10;
+    display:flex; justify-content:center;
+    padding:8px 12px;
+    pointer-events:none;
+    opacity:0; transform:translateY(-110%);
+    transition:opacity .25s ease, transform .25s ease;
+  }
+  .minibar.visible { opacity:1; transform:translateY(0); pointer-events:auto; }
+  .minibar-inner {
+    width:100%; max-width:420px;
+    display:flex; align-items:center; gap:10px;
+    padding:7px 12px 7px 8px;
+    background:var(--glass);
+    -webkit-backdrop-filter:blur(14px) saturate(1.2);
+    backdrop-filter:blur(14px) saturate(1.2);
+    border:1px solid var(--line);
+    border-radius:12px;
+    box-shadow:0 6px 18px rgba(40,50,60,.18), inset 0 1px 0 rgba(255,255,255,.65);
+  }
+  .minibar .thumb {
+    width:36px; height:36px; flex:none; border-radius:7px; object-fit:cover;
+    box-shadow:0 2px 6px rgba(40,50,60,.25);
+  }
+  .minibar .mtitle {
+    flex:1; min-width:0;
+    font-size:13px; font-weight:600; line-height:1.35;
+    white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+  }
+  .minibar .martist {
+    font-size:11px; font-weight:400; color:var(--muted);
+    white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+  }
+  .label {
+    font-family:Georgia,"Times New Roman","Hiragino Mincho ProN","Yu Mincho",serif;
+    font-size:17px; letter-spacing:.22em; color:var(--ink);
+    text-align:center; margin-bottom:20px; font-weight:400;
+    padding-left:.22em;
+    text-shadow:
+      0 -1px 1px rgba(255,255,255,.45),
+      0 2px 5px rgba(40,50,60,.28),
+      0 12px 24px rgba(40,50,60,.32);
+  }
+  .card {
+    width:100%; max-width:420px;
+    background:var(--glass);
+    -webkit-backdrop-filter:blur(14px) saturate(1.2);
+    backdrop-filter:blur(14px) saturate(1.2);
+    border:1px solid var(--line);
+    border-radius:20px;
+    box-shadow:0 12px 34px rgba(40,50,60,.22), inset 0 1px 0 rgba(255,255,255,.65);
+    padding:28px 24px 24px;
+  }
+  .cover {
+    width:100%; aspect-ratio:1; border-radius:12px; display:block; object-fit:cover;
+    background:linear-gradient(135deg,#d07f36 0%,#C67223 55%,#a85d1b 100%);
+    box-shadow:0 6px 18px rgba(40,50,60,.28);
+  }
+  h1.title { font-size:20px; line-height:1.5; text-align:center; margin-top:22px; }
+  .artist { text-align:center; font-size:14px; color:#26292b; margin-top:6px; }
+  .meta { text-align:center; color:var(--muted); font-size:12px; margin-top:8px; }
+  .meta span + span::before { content:"・"; margin:0 4px; }
+  .tagline {
+    font-family:Georgia,"Times New Roman","Hiragino Mincho ProN","Yu Mincho",serif;
+    text-align:left; margin-top:24px; padding:20px 6px 4px;
+    border-top:1px solid var(--line-dark);
+    color:var(--ink); font-size:13px; font-weight:500; letter-spacing:.06em; line-height:2.1;
+  }
+  .credits { text-align:center; color:var(--muted); font-size:11px; margin-top:8px; }
+  .license {
+    margin-top:18px; text-align:center;
+    font-size:11px; color:var(--muted);
+    display:flex; align-items:center; justify-content:center; gap:7px;
+  }
+  .license img { width:16px; height:16px; opacity:.65; display:block; }
+  .license a { color:var(--muted); text-decoration:underline; text-underline-offset:3px; }
+  .license a:hover { color:var(--accent); }
+  .stores { margin-top:24px; display:flex; flex-direction:column; gap:10px; }
+  .store {
+    display:flex; align-items:center; gap:14px;
+    padding:13px 16px;
+    border:1px solid var(--line); border-radius:12px;
+    background:var(--glass-btn);
+    -webkit-backdrop-filter:blur(10px) saturate(1.2);
+    backdrop-filter:blur(10px) saturate(1.2);
+    box-shadow:0 2px 8px rgba(40,50,60,.08), inset 0 1px 0 rgba(255,255,255,.55);
+    color:var(--ink);
+    text-decoration:none; font-size:15px; font-weight:600;
+    transition:border-color .15s, box-shadow .15s, transform .15s, background .15s;
+  }
+  a.store:hover { background:var(--glass-strong); border-color:rgba(198,114,35,.55); box-shadow:0 4px 14px rgba(198,114,35,.18); transform:translateY(-1px); }
+  a.store:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+  .store img { width:26px; height:26px; flex:none; display:block; }
+  .store .name { flex:1; text-align:left; }
+  .store .chev { flex:none; color:#7d868e; display:flex; }
+  .store.dl { background:rgba(198,114,35,.88); border-color:rgba(255,255,255,.6); color:#fff; }
+  a.store.dl:hover { background:rgba(198,114,35,.97); border-color:#fff; box-shadow:0 4px 14px rgba(198,114,35,.35); }
+  .store.dl .chev { color:rgba(255,255,255,.85); }
+  .store.dl svg.ic { width:26px; height:26px; flex:none; display:block; }
+  .special { margin-top:14px; text-align:center; font-size:12px; }
+  .special a { color:var(--muted); text-decoration:underline; text-underline-offset:3px; }
+  .special a:hover { color:var(--accent); }
+  .store.dead { background:var(--dead-bg); color:var(--dead-ink); border:1px dashed var(--dead-line); box-shadow:none; cursor:default; }
+  .store.dead img { filter:grayscale(1); opacity:.45; }
+  .store.dead .tag { flex:none; font-size:11px; font-weight:400; border:1px solid var(--dead-line); border-radius:20px; padding:2px 10px; }
+  .note { font-size:11px; color:var(--muted); margin-top:12px; }
+  .tracks { margin-top:28px; border-top:1px solid var(--line-dark); padding-top:18px; }
+  .tracks h2 { font-size:11px; letter-spacing:.3em; color:var(--accent); text-align:center; margin-bottom:8px; font-weight:600; }
+  .tracks h2.bonus { margin-top:20px; }
+  .track { display:flex; gap:12px; padding:9px 2px; border-bottom:1px solid var(--line-dark); font-size:14px; }
+  .track:last-child { border-bottom:none; }
+  .track .no { color:var(--muted); width:1.4em; flex:none; }
+  .track .tname { font-weight:600; }
+  .track .feat { font-weight:400; font-size:13px; color:#26292b; }
+  .track .tartist { color:var(--muted); font-size:12px; margin-top:1px; }
+  footer { margin-top:26px; text-align:center; font-size:12px; color:#33383c; }
+  footer a { color:#33383c; }
+  footer a:hover { color:var(--accent); }
+  @media (max-width:480px) {
+    body { padding:28px 12px 40px; }
+    .card { padding:22px 16px 18px; border-radius:16px; }
+    .label { font-size:16px; }
+    h1.title { font-size:18px; }
+    .store { padding:12px 14px; font-size:14px; }
+    .store img { width:24px; height:24px; }
+    .minibar { padding:6px 10px; }
+    .minibar .thumb { width:32px; height:32px; }
+  }
+</style>
+</head>
+<body>
+  <div class="bg-glow" aria-hidden="true"><div class="blob"></div></div>
+
+  <div class="minibar" id="minibar" aria-hidden="true">
+    <div class="minibar-inner">
+      <img class="thumb" src="img/rmmy013.jpg" alt="">
+      <div class="mtitle">-Degistalgia- デジスタルジア<div class="martist">dusKape and BJ.chika</div></div>
+    </div>
+  </div>
+
+  <div class="label">rummy records</div>
+
+  <div class="card">
+    <img class="cover" src="img/rmmy013.jpg" alt="-Degistalgia- デジスタルジア ジャケット">
+
+    <h1 class="title" id="pagetitle">-Degistalgia- デジスタルジア</h1>
+    <p class="artist">dusKape and BJ.chika</p>
+    <p class="meta"><span>RMMY-013</span><span>2016-04-24</span></p>
+    <p class="credits">Artwork: minoson</p>
+
+    <div class="stores">
+      <a class="store" href="https://rummyrecords.bandcamp.com/album/degistalgia"><img src="https://cdn.simpleicons.org/bandcamp" alt="" width="26" height="26"><span class="name">Bandcamp</span><span class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span></a>
+      <a class="store" href="https://www.youtube.com/watch?v=Fl08Hj4tHNw"><img src="https://cdn.simpleicons.org/youtube" alt="" width="26" height="26"><span class="name">YouTube</span><span class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span></a>
+    </div>
+
+    <div class="tracks">
+      <h2>TRACKS</h2>
+      <div class="track"><span class="no">1</span><div><div class="tname">HiTechNostAlgia</div><div class="tartist">BJ.chika</div></div></div>
+      <div class="track"><span class="no">2</span><div><div class="tname">Dreamin&#x27; chick -yume miru hina-</div><div class="tartist">dusKape vs BJ.chika (Sampling by noise.inc)</div></div></div>
+      <div class="track"><span class="no">3</span><div><div class="tname">そしてキャラメルの空へ歩み出す -dusKape side-</div><div class="tartist">Remixed by dusKape (Music: BJ.chika)</div></div></div>
+      <div class="track"><span class="no">4</span><div><div class="tname">xaxatorte 90&#x27;s degital mix</div><div class="tartist">Remixed by BJ.chika (Music: dusKape)</div></div></div>
+      <div class="track"><span class="no">5</span><div><div class="tname">Milky Star 2016 ver.</div><div class="tartist">dusKape vs BJ.chika</div></div></div>
+      <div class="track"><span class="no">6</span><div><div class="tname">23KOMA3</div><div class="tartist">BJ.chika</div></div></div>
+      <div class="track"><span class="no">7</span><div><div class="tname">22.5UME 2016 ver.</div><div class="tartist">Remixed by dusKape (Music: BJ.chika)</div></div></div>
+      <div class="track"><span class="no">8</span><div><div class="tname">21ANKO 2016 ver.</div><div class="tartist">dusKape vs BJ.chika</div></div></div>
+      <div class="track"><span class="no">9</span><div><div class="tname">六月の雨 2016 ver.</div><div class="tartist">Remixed by BJ.chika (Music: dusKape)</div></div></div>
+      <div class="track"><span class="no">10</span><div><div class="tname">Holy Bamboo Jungle 2016 ver.</div><div class="tartist">dusKape vs BJ.chika</div></div></div>
+      <div class="track"><span class="no">11</span><div><div class="tname">Reflections of the calm sea 2016 ver.</div><div class="tartist">BJ.chika</div></div></div>
+      <div class="track"><span class="no">12</span><div><div class="tname">Desist -Algia</div><div class="tartist">BJ.chika</div></div></div>
+    </div>
+
+    <p class="tagline">M3 2016春、もう一つの新譜。<br>dusKapeとBJ.chikaによる合作アルバムが、満を持して登場。</p>
+  </div>
+
+  <footer>
+    <a href="https://rummyrecords.com/">rummyrecords.com</a> ・ <a href="https://rummyrecords.bandcamp.com/">Bandcamp</a>
+  </footer>
+
+<script>
+  (function () {
+    var bar = document.getElementById('minibar');
+    var title = document.getElementById('pagetitle');
+    if (!bar || !title || !('IntersectionObserver' in window)) return;
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        var show = !entry.isIntersecting && entry.boundingClientRect.top < 0;
+        bar.classList.toggle('visible', show);
+        bar.setAttribute('aria-hidden', show ? 'false' : 'true');
+      });
+    }, { threshold: 0 });
+    observer.observe(title);
+  })();
+</script>
+
+</body>
+</html>
