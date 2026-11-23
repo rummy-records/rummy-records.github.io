@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
 <title>Behind — rummy records</title>
 <style>
   :root {
@@ -158,9 +159,6 @@
   .store img { width:26px; height:26px; flex:none; display:block; }
   .store .name { flex:1; text-align:left; }
   .store .chev { flex:none; color:#7d868e; display:flex; }
-  .store.dl { background:rgba(198,114,35,.88); border-color:rgba(255,255,255,.6); color:#fff; }
-  a.store.dl:hover { background:rgba(198,114,35,.97); border-color:#fff; box-shadow:0 4px 14px rgba(198,114,35,.35); }
-  .store.dl .chev { color:rgba(255,255,255,.85); }
   .store.off { opacity:.42; filter:grayscale(1); pointer-events:none; }
   .store.dl svg.ic { width:26px; height:26px; flex:none; display:block; }
   .store svg.ic { width:26px; height:26px; flex:none; display:block; }
@@ -231,6 +229,29 @@
   details.lyr[open] summary::after { transform:rotate(225deg); }
   .lyric { white-space:pre-line; font-size:12.5px; line-height:1.95; color:#26292b; padding:10px 2px 6px; }
   .xfade iframe { width:100%; height:166px; border:0; border-radius:10px; display:block; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#1B2025; --ink:#E9EDEF; --accent:#D98A3D; --muted:#9AA5AD;
+      --line:rgba(255,255,255,.16); --line-dark:rgba(255,255,255,.10);
+      --glass:rgba(42,49,56,.65); --glass-strong:rgba(42,49,56,.85); --glass-btn:rgba(255,255,255,.07);
+      --dead-bg:rgba(42,49,56,.5); --dead-line:rgba(154,165,173,.35); --dead-ink:#7E8891; }
+    .bg-glow { background:radial-gradient(60% 45% at 50% 0%, rgba(170,190,210,.13), rgba(170,190,210,0) 70%), var(--bg); }
+    .bg-glow::before { background:radial-gradient(circle, rgba(217,138,61,.30), rgba(217,138,61,0) 68%); }
+    .bg-glow::after { background:radial-gradient(circle, rgba(120,140,160,.26), rgba(120,140,160,0) 68%); }
+    .bg-glow .blob { background:radial-gradient(circle, rgba(90,110,130,.32), rgba(90,110,130,0) 68%); }
+    .label { color:#F3E9DC; text-shadow:0 0 3px rgba(255,240,220,.55), 0 0 14px rgba(217,138,61,.45), 0 0 34px rgba(217,138,61,.30), 0 0 64px rgba(217,138,61,.20); }
+    .card { box-shadow:0 12px 34px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.14); }
+    .navbtn { box-shadow:0 6px 18px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.14); }
+    .navpanel { box-shadow:0 12px 30px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.14); }
+    .navpanel a:hover { background:rgba(255,255,255,.10); }
+    footer, footer a { color:#9AA5AD; }
+    .minibar-inner { background:rgba(42,49,56,.85); box-shadow:0 6px 18px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.14); }
+    .artist { color:#C9D1D6; }
+    .store .chev { color:#9AA5AD; }
+    a.store:hover { border-color:rgba(217,138,61,.6); box-shadow:0 4px 14px rgba(217,138,61,.20); }
+    .track .feat { color:#C9D1D6; }
+    details.lyr summary::after { border-color:#9AA5AD; }
+    .lyric { color:#C9D1D6; }
+  }
 </style>
 </head>
 <body>
