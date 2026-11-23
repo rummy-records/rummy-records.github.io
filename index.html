@@ -81,7 +81,7 @@
   .pcard .pmeta { font-size:11px; color:var(--muted); margin-top:2px; letter-spacing:.05em; }
   .pcard iframe { width:100%; height:42px; border:0; margin-top:14px; display:block; }
   .pcard .pbtns { display:flex; gap:10px; margin-top:14px; }
-  .pcard .pbtn { flex:1; text-align:center; padding:9px 10px; border-radius:10px;
+  .pcard .pbtn { flex:1; display:flex; align-items:center; justify-content:center; gap:7px; text-align:center; padding:9px 10px; border-radius:10px;
     background:rgba(255,255,255,.42); border:1px solid var(--line); color:var(--ink);
     font-family:inherit; font-size:13px; font-weight:600; text-decoration:none; cursor:pointer;
     transition:background .15s ease, border-color .15s ease; }
@@ -100,7 +100,7 @@
 
   <a class="label" href="index.html">rummy records</a>
   <div class="sub">DISCOGRAPHY</div>
-  <div class="randwrap"><button class="randbtn" id="randbtn" type="button"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"></polyline><line x1="4" y1="20" x2="21" y2="3"></line><polyline points="21 16 21 21 16 21"></polyline><line x1="15" y1="15" x2="21" y2="21"></line><line x1="4" y1="4" x2="9" y2="9"></line></svg>ランダム試聴</button></div>
+  <div class="randwrap"><button class="randbtn" id="randbtn" type="button" aria-expanded="false"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"></polyline><line x1="4" y1="20" x2="21" y2="3"></line><polyline points="21 16 21 21 16 21"></polyline><line x1="15" y1="15" x2="21" y2="21"></line><line x1="4" y1="4" x2="9" y2="9"></line></svg>シャッフル試聴</button></div>
   <div class="pcard" id="pcard">
     <div class="prow">
       <img id="pimg" src="" alt="">
@@ -113,7 +113,7 @@
     <iframe id="pframe" title="Bandcamp player" loading="lazy" seamless></iframe>
     <div class="pbtns">
       <a class="pbtn" id="ppage" href="#">この作品のページへ</a>
-      <button class="pbtn" id="pagain" type="button">もう一枚</button>
+      <button class="pbtn" id="pagain" type="button"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 5l8.5 7L6 19z"/><rect x="16.4" y="5" width="2.6" height="14" rx="0.6"/></svg>もう一曲</button>
     </div>
   </div>
 
@@ -188,7 +188,7 @@
         art = document.getElementById('part'), meta = document.getElementById('pmeta'),
         frame = document.getElementById('pframe'), page = document.getElementById('ppage'),
         again = document.getElementById('pagain');
-    var last = -1;
+    var last = -1, isOpen = false;
     function pick() {
       var i;
       do { i = Math.floor(Math.random() * BC.length); } while (BC.length > 1 && i === last);
@@ -199,12 +199,21 @@
       meta.textContent = r.c + ' ・ ' + r.d;
       page.href = r.f + '.html';
       frame.src = 'https://bandcamp.com/EmbeddedPlayer/album=' + r.id + '/size=small/bgcol=ffffff/linkcol=c67223/transparent=true/';
-      if (!card.classList.contains('open')) {
-        card.classList.add('open');
-        card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      }
     }
-    btn.addEventListener('click', pick);
+    function openCard() {
+      pick();
+      isOpen = true;
+      card.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+      card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+    function closeCard() {
+      isOpen = false;
+      card.classList.remove('open');
+      frame.src = 'about:blank';
+      btn.setAttribute('aria-expanded', 'false');
+    }
+    btn.addEventListener('click', function () { if (isOpen) closeCard(); else openCard(); });
     again.addEventListener('click', pick);
   })();
 </script>
