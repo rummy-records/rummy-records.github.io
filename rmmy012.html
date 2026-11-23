@@ -64,6 +64,7 @@
     transition:opacity .25s ease, transform .25s ease;
   }
   .minibar.visible { opacity:1; transform:translateY(0); pointer-events:auto; }
+  @media (max-width:560px) { .minibar { padding-right:64px; } }
   .minibar-inner {
     width:100%; max-width:420px;
     display:flex; align-items:center; gap:10px;
