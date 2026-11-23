@@ -19,7 +19,9 @@
     -webkit-backdrop-filter:blur(14px) saturate(1.2); backdrop-filter:blur(14px) saturate(1.2);
     border:1px solid var(--line); border-radius:20px;
     box-shadow:0 12px 34px rgba(40,50,60,.22), inset 0 1px 0 rgba(255,255,255,.65); padding:10px 22px 18px; }
-  .year { font-size:11px; letter-spacing:.3em; color:var(--accent); font-weight:600; margin:18px 0 6px; }
+  .year { font-size:11px; letter-spacing:.3em; color:var(--accent); font-weight:600; margin:10px 0 6px;
+    position:sticky; top:0; z-index:5; padding:8px 0 6px; background:rgba(255,255,255,.65);
+    -webkit-backdrop-filter:blur(14px) saturate(1.2); backdrop-filter:blur(14px) saturate(1.2); }
   .item { display:flex; gap:12px; padding:7px 0; border-bottom:1px solid var(--line-dark); font-size:13.5px; }
   .item:last-child { border-bottom:none; }
   .item .d { color:var(--muted); font-size:12px; width:44px; flex:none; padding-top:2px; }
