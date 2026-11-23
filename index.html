@@ -88,7 +88,8 @@
   .pcard .prow { display:flex; align-items:center; gap:14px; }
   .pcard .prow img { width:72px; height:72px; border-radius:10px; object-fit:cover; flex:none;
     box-shadow:0 2px 6px rgba(40,50,60,.25); background:#9aa7b1; }
-  .pcard iframe { flex:1; min-width:0; height:120px; border:0; display:block; }
+  .pcard iframe { flex:1; min-width:0; height:42px; border:0; display:block; }
+  .pcard .ptrack { margin-top:12px; font-size:13.5px; color:var(--ink); letter-spacing:.02em; }
   .pcard .pbtns { display:flex; gap:10px; margin-top:14px; }
   .pcard .pbtn { flex:1; display:flex; align-items:center; justify-content:center; gap:7px; text-align:center; padding:9px 10px; border-radius:10px;
     background:rgba(255,255,255,.42); border:1px solid var(--line); color:var(--ink);
@@ -141,6 +142,7 @@
       <img id="pimg" src="" alt="">
       <iframe id="pframe" title="Bandcamp player" loading="lazy" seamless></iframe>
     </div>
+    <div class="ptrack" id="ptrack"></div>
     <div class="pbtns">
       <a class="pbtn" id="ppage" href="#">この作品のページへ</a>
       <button class="pbtn" id="pagain" type="button"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 5l8.5 7L6 19z"/><rect x="16.4" y="5" width="2.6" height="14" rx="0.6"/></svg>もう一曲</button>
@@ -229,13 +231,13 @@
 
 <script>
   (function () {
-    var BC = [{"f": "rmmy030", "t": "PMMA HOUSING", "a": "Various Artists", "d": "2024-04-28", "c": "RMMY-030", "id": 429428526, "img": "img/rmmy030.jpg"}, {"f": "rmmy029", "t": "Nature Pop / サンデー / ルパートの涙", "a": "キョド, zero yon nana & BSer", "d": "2023-10-29", "c": "RMMY-029", "id": 3220180280, "img": "img/rmmy029.jpg"}, {"f": "rmmy028", "t": "In 10 Years Time", "a": "Various Artists", "d": "2022-12-11", "c": "RMMY-028", "id": 44918899, "img": "img/rmmy028.jpg"}, {"f": "rmmy027", "t": "ヒカリのパレード", "a": "Various Artists", "d": "2021-04-16", "c": "RMMY-027", "id": 440035753, "img": "img/rmmy027.jpg"}, {"f": "rmmy025", "t": "DTM Girl", "a": "女子力", "d": "2019-04-28", "c": "RMMY-025", "id": 2419504308, "img": "img/rmmy025.jpg"}, {"f": "rmmy023", "t": "Behind", "a": "Various Artists", "d": "2018-04-29", "c": "RMMY-023", "id": 3392419143, "img": "img/rmmy023.jpg"}, {"f": "rmmy022", "t": "Bitter", "a": "ピコピコ団", "d": "2017-10-29", "c": "RMMY-022", "id": 843918781, "img": "img/rmmy022.jpg"}, {"f": "rmmy015", "t": "rummy complex", "a": "Various Artists", "d": "2016-10-30", "c": "RMMY-015", "id": 993134360, "img": "img/rmmy015.jpg"}, {"f": "rmmy013", "t": "-Degistalgia- デジスタルジア", "a": "dusKape and BJ.chika", "d": "2016-04-24", "c": "RMMY-013", "id": 202528034, "img": "img/rmmy013.jpg"}, {"f": "rmmy012", "t": "Top Secret", "a": "BSer", "d": "2016-04-24", "c": "RMMY-012", "id": 922485361, "img": "img/rmmy012.jpg"}, {"f": "rmmy005", "t": "rummy2:Metropolis", "a": "Various Artists", "d": "2015-10-25", "c": "RMMY-005", "id": 195227992, "img": "img/rmmy005.jpg"}, {"f": "rmmy002", "t": "rummy1:Banquet", "a": "Various Artists", "d": "2015-04-26", "c": "RMMY-002", "id": 4143630914, "img": "img/rmmy002.jpg"}];
+    var BC = [{"f": "rmmy030", "t": "PMMA HOUSING", "a": "Various Artists", "d": "2024-04-28", "c": "RMMY-030", "id": 429428526, "img": "img/rmmy030.jpg", "ft": "奔る feat. 初音ミク — wf"}, {"f": "rmmy029", "t": "Nature Pop / サンデー / ルパートの涙", "a": "キョド, zero yon nana & BSer", "d": "2023-10-29", "c": "RMMY-029", "id": 3220180280, "img": "img/rmmy029.jpg", "ft": "Nature Pop feat. Ryo, 夏色花梨 — キョド & zero yon nana"}, {"f": "rmmy028", "t": "In 10 Years Time", "a": "Various Artists", "d": "2022-12-11", "c": "RMMY-028", "id": 44918899, "img": "img/rmmy028.jpg", "ft": "Res(e)t in Peace feat. 朱色 — ぎゃぷいち"}, {"f": "rmmy027", "t": "ヒカリのパレード", "a": "Various Artists", "d": "2021-04-16", "c": "RMMY-027", "id": 440035753, "img": "img/rmmy027.jpg", "ft": "ヒカリのパレード feat. KYOQO — キョド, zero yon nana & Nennen"}, {"f": "rmmy025", "t": "DTM Girl", "a": "女子力", "d": "2019-04-28", "c": "RMMY-025", "id": 2419504308, "img": "img/rmmy025.jpg", "ft": "opening"}, {"f": "rmmy023", "t": "Behind", "a": "Various Artists", "d": "2018-04-29", "c": "RMMY-023", "id": 3392419143, "img": "img/rmmy023.jpg", "ft": "Floating Particles — inphey"}, {"f": "rmmy022", "t": "Bitter", "a": "ピコピコ団", "d": "2017-10-29", "c": "RMMY-022", "id": 843918781, "img": "img/rmmy022.jpg", "ft": "Polygonize"}, {"f": "rmmy015", "t": "rummy complex", "a": "Various Artists", "d": "2016-10-30", "c": "RMMY-015", "id": 993134360, "img": "img/rmmy015.jpg", "ft": "Cometgazer — BSer"}, {"f": "rmmy013", "t": "-Degistalgia- デジスタルジア", "a": "dusKape and BJ.chika", "d": "2016-04-24", "c": "RMMY-013", "id": 202528034, "img": "img/rmmy013.jpg", "ft": "HiTechNostAlgia — BJ.chika"}, {"f": "rmmy012", "t": "Top Secret", "a": "BSer", "d": "2016-04-24", "c": "RMMY-012", "id": 922485361, "img": "img/rmmy012.jpg", "ft": "Top Secret"}, {"f": "rmmy005", "t": "rummy2:Metropolis", "a": "Various Artists", "d": "2015-10-25", "c": "RMMY-005", "id": 195227992, "img": "img/rmmy005.jpg", "ft": "Last In, First Out, Communication — Nennen"}, {"f": "rmmy002", "t": "rummy1:Banquet", "a": "Various Artists", "d": "2015-04-26", "c": "RMMY-002", "id": 4143630914, "img": "img/rmmy002.jpg", "ft": "Agita — gu~kun"}];
     var btn = document.getElementById('randbtn');
     var card = document.getElementById('pcard');
     if (!btn || !card || !BC.length) return;
     var img = document.getElementById('pimg'),
         frame = document.getElementById('pframe'), page = document.getElementById('ppage'),
-        again = document.getElementById('pagain');
+        again = document.getElementById('pagain'), track = document.getElementById('ptrack');
     var last = -1, isOpen = false;
     function pick() {
       var i;
@@ -244,7 +246,8 @@
       var r = BC[i];
       img.src = r.img; img.alt = r.t + ' ジャケット';
       page.href = r.f + '.html';
-      frame.src = 'https://bandcamp.com/EmbeddedPlayer/album=' + r.id + '/size=large/bgcol=ffffff/linkcol=c67223/artwork=none/tracklist=false/transparent=true/';
+      track.textContent = r.ft ? '♪ ' + r.ft : '';
+      frame.src = 'https://bandcamp.com/EmbeddedPlayer/album=' + r.id + '/size=small/bgcol=ffffff/linkcol=c67223/transparent=true/';
     }
     function openCard() {
       pick();
