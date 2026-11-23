@@ -24,6 +24,10 @@
   .card p { font-size:14.5px; line-height:2.0; margin-bottom:18px; }
   .card h2 { font-size:11px; letter-spacing:.3em; color:var(--accent); font-weight:600; margin:24px 0 8px; }
   .card ul { list-style:none; }
+  .snsrow { display:flex; gap:20px; align-items:center; margin:6px 0 4px; }
+  .snsrow a { display:inline-flex; line-height:0; }
+  .snsrow img { width:26px; height:26px; display:block; }
+  .snsrow a:hover { opacity:.65; }
   .card li { padding:6px 0; border-bottom:1px solid var(--line-dark); font-size:14px; }
   .card li:last-child { border-bottom:none; }
   .card a { color:var(--ink); text-decoration:underline; text-underline-offset:3px; }
@@ -42,7 +46,7 @@
     display:flex; flex-direction:column; opacity:0; transform:translateY(-6px); pointer-events:none;
     transition:opacity .18s ease, transform .18s ease; }
   .navpanel.open { opacity:1; transform:translateY(0); pointer-events:auto; }
-  .navpanel a { padding:10px 12px; border-radius:9px; color:var(--ink); text-decoration:none; font-size:14px; font-weight:600; }
+  .navpanel a { padding:10px 12px; border-radius:9px; color:var(--ink); text-decoration:none; font-size:14px; font-weight:600; text-transform:uppercase; }
   .navpanel a:hover { background:rgba(255,255,255,.55); color:var(--accent); }
   @media (prefers-color-scheme: dark) {
     :root { --bg:#1B2025; --ink:#E9EDEF; --accent:#D98A3D; --muted:#9AA5AD;
@@ -58,6 +62,7 @@
     .navbtn { box-shadow:none; }
     .navpanel { box-shadow:0 12px 30px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.14); }
     .navpanel a:hover { background:rgba(255,255,255,.10); }
+    .snsrow img.xicon { content:url("https://cdn.simpleicons.org/x/white"); }
     footer, footer a { color:#9AA5AD; }
     .icon { content:url("img/icon-white.png"); }
   }
@@ -86,12 +91,12 @@
     トラックメイカーにとって新しい発見のある<br>
     コアでキャッチーな楽曲を発信する。</p>
     <h2>SNS</h2>
-    <ul>
-      <li><a href="https://twitter.com/rummyrecords">Twitter</a></li>
-      <li><a href="https://soundcloud.com/rummyrecords">SoundCloud</a></li>
-      <li><a href="https://www.youtube.com/channel/UC4yE1cB4NwUvvX1VqQ3Zqg">YouTube</a></li>
-      <li><a href="https://rummyrecords.bandcamp.com/">Bandcamp</a></li>
-    </ul>
+    <div class="snsrow">
+      <a href="https://twitter.com/rummyrecords" aria-label="X (Twitter)"><img class="xicon" src="https://cdn.simpleicons.org/x" alt="X (Twitter)" width="26" height="26"></a>
+      <a href="https://soundcloud.com/rummyrecords" aria-label="SoundCloud"><img src="https://cdn.simpleicons.org/soundcloud" alt="SoundCloud" width="26" height="26"></a>
+      <a href="https://www.youtube.com/channel/UC4yE1cB4NwUvvX1VqQ3Zqg" aria-label="YouTube"><img src="https://cdn.simpleicons.org/youtube" alt="YouTube" width="26" height="26"></a>
+      <a href="https://rummyrecords.bandcamp.com/" aria-label="Bandcamp"><img src="https://cdn.simpleicons.org/bandcamp" alt="Bandcamp" width="26" height="26"></a>
+    </div>
     <h2>MEMBER</h2>
     <ul>
       <li><a href="https://twitter.com/Nennen_xxx">Nennen</a> <span class="role">(Organizer)</span></li>
