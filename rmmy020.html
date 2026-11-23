@@ -60,11 +60,17 @@
     display:flex; justify-content:center;
     padding:8px 12px;
     pointer-events:none;
-    opacity:0; transform:translateY(-110%);
-    transition:opacity .25s ease, transform .25s ease;
+    opacity:0; filter:blur(8px); -webkit-filter:blur(8px); transform:scale(.985);
+    transition:opacity .5s ease, filter .5s ease, -webkit-filter .5s ease, transform .5s ease;
   }
-  .minibar.visible { opacity:1; transform:translateY(0); pointer-events:auto; }
-  @media (max-width:560px) { .minibar { padding-right:64px; } }
+  .minibar.visible { opacity:1; filter:blur(0); -webkit-filter:blur(0); transform:scale(1); pointer-events:auto; }
+  .minibar.visible .minibar-inner { animation:bloom .65s ease; }
+  @keyframes bloom {
+    0% { box-shadow:0 6px 18px rgba(40,50,60,.18), inset 0 1px 0 rgba(255,255,255,.65); }
+    35% { box-shadow:0 0 38px rgba(255,246,220,.9), 0 6px 18px rgba(40,50,60,.18), inset 0 1px 0 rgba(255,255,255,.65); }
+    100% { box-shadow:0 6px 18px rgba(40,50,60,.18), inset 0 1px 0 rgba(255,255,255,.65); }
+  }
+  @media (max-width:560px) { .minibar { right:66px; padding-right:0; } }
   .minibar-inner {
     width:100%; max-width:420px;
     display:flex; align-items:center; gap:10px;
