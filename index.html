@@ -98,7 +98,7 @@
     .label::before { content:""; position:absolute; left:50%; top:-64px; transform:translateX(-50%); width:min(500px,94vw); height:250px; border-radius:50%; pointer-events:none; z-index:-1; filter:blur(8px);
       background:radial-gradient(64px 24px at 50% 6px, rgba(255,252,240,.80), rgba(255,252,240,0) 70%), radial-gradient(closest-side, rgba(255,246,226,.62), rgba(255,230,182,.34) 46%, rgba(222,164,96,.13) 72%, rgba(217,138,61,0) 100%); }
     .card { box-shadow:0 12px 34px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.14); }
-    .navbtn { box-shadow:0 6px 18px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.14); }
+    .navbtn { box-shadow:none; }
     .navpanel { box-shadow:0 12px 30px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.14); }
     .navpanel a:hover { background:rgba(255,255,255,.10); }
     footer, footer a { color:#9AA5AD; }
@@ -111,6 +111,7 @@
     .pcard .pbtn { background:rgba(255,255,255,.07); }
     .pcard .pbtn:hover { background:rgba(255,255,255,.13); }
   }
+  .navbtn { background:transparent; border-color:transparent; -webkit-backdrop-filter:none; backdrop-filter:none; box-shadow:none; }
 </style>
 </head>
 <body>
