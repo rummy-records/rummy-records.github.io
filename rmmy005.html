@@ -71,7 +71,7 @@
     35% { box-shadow:0 0 38px rgba(255,246,220,.9), 0 6px 18px rgba(40,50,60,.18), inset 0 1px 0 rgba(255,255,255,.65); }
     100% { box-shadow:0 6px 18px rgba(40,50,60,.18), inset 0 1px 0 rgba(255,255,255,.65); }
   }
-  @media (max-width:560px) { .minibar { right:66px; padding-right:0; } }
+  @media (max-width:560px) { .minibar { right:74px; padding-right:0; } }
   .minibar-inner {
     width:100%; max-width:420px;
     display:flex; align-items:center; gap:10px;
@@ -164,7 +164,7 @@
   .store svg.ic { width:26px; height:26px; flex:none; display:block; }
   .navbtn {
     position:fixed; top:12px; right:12px; z-index:30;
-    width:42px; height:42px; border-radius:14px;
+    width:50px; height:50px; border-radius:14px;
     display:flex; align-items:center; justify-content:center;
     background:rgba(255,255,255,.10); border:1px solid var(--line);
     -webkit-backdrop-filter:blur(14px) saturate(1.2); backdrop-filter:blur(14px) saturate(1.2);
@@ -172,7 +172,7 @@
     cursor:pointer; color:var(--ink);
   }
   .navpanel {
-    position:fixed; top:62px; right:12px; z-index:30;
+    position:fixed; top:70px; right:12px; z-index:30;
     min-width:190px; padding:8px;
     background:var(--glass); border:1px solid var(--line); border-radius:14px;
     -webkit-backdrop-filter:blur(14px) saturate(1.2); backdrop-filter:blur(14px) saturate(1.2);
@@ -261,7 +261,7 @@
   <div class="bg-glow" aria-hidden="true"><div class="blob"></div></div>
 
   <button class="navbtn" id="navbtn" aria-label="メニュー" aria-expanded="false">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path class="mb-m" d="M4 7 L7.2 7 L10.4 7 L13.6 7 L16.8 7 L20 7 Z"/><path class="mb-m" d="M4 12 L7.2 12 L10.4 12 L13.6 12 L16.8 12 L20 12 Z"/><path class="mb-m" d="M4 17 L7.2 17 L10.4 17 L13.6 17 L16.8 17 L20 17 Z"/><path class="mb-in" stroke-width="1.6" d="M11.32 6.16 L15 8 L18.68 6.16 M15 8 L15 10.16" opacity="0"/><path class="mb-in" stroke-width="1.6" d="M4.92 11.56 L8.6 13.4 L12.28 11.56 M8.6 13.4 L8.6 15.56" opacity="0"/><path class="mb-in" stroke-width="1.6" d="M11.32 16.96 L15 18.8 L18.68 16.96 M15 18.8 L15 20.96" opacity="0"/></svg>
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path class="mb-m" d="M4 7 L7.2 7 L10.4 7 L13.6 7 L16.8 7 L20 7 Z"/><path class="mb-m" d="M4 12 L7.2 12 L10.4 12 L13.6 12 L16.8 12 L20 12 Z"/><path class="mb-m" d="M4 17 L7.2 17 L10.4 17 L13.6 17 L16.8 17 L20 17 Z"/><path class="mb-in" stroke-width="1.6" d="M11.32 6.16 L15 8 L18.68 6.16 M15 8 L15 10.16" opacity="0"/><path class="mb-in" stroke-width="1.6" d="M4.92 11.56 L8.6 13.4 L12.28 11.56 M8.6 13.4 L8.6 15.56" opacity="0"/><path class="mb-in" stroke-width="1.6" d="M11.32 16.96 L15 18.8 L18.68 16.96 M15 18.8 L15 20.96" opacity="0"/></svg>
   </button>
   <nav class="navpanel" id="navpanel" aria-hidden="true">
     <a href="index.html">Discography</a>
