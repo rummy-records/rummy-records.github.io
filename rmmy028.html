@@ -213,7 +213,7 @@
   <div class="bg-glow" aria-hidden="true"><div class="blob"></div></div>
 
   <button class="navbtn" id="navbtn" aria-label="メニュー" aria-expanded="false">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></svg>
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path class="mb-m" d="M4 7 L7.2 7 L10.4 7 L13.6 7 L16.8 7 L20 7 Z"/><path class="mb-m" d="M4 12 L7.2 12 L10.4 12 L13.6 12 L16.8 12 L20 12 Z"/><path class="mb-m" d="M4 17 L7.2 17 L10.4 17 L13.6 17 L16.8 17 L20 17 Z"/><path class="mb-in" d="M10.4 5.7 L19.6 5.7 M15 5.7 L15 10.7" opacity="0"/><path class="mb-in" d="M4 11.1 L13.2 11.1 M8.6 11.1 L8.6 16.1" opacity="0"/><path class="mb-in" d="M10.4 16.5 L19.6 16.5 M15 16.5 L15 21.5" opacity="0"/></svg>
   </button>
   <nav class="navpanel" id="navpanel" aria-hidden="true">
     <a href="index.html">Discography</a>
@@ -282,13 +282,13 @@
     if (navbtn && navpanel) {
       navbtn.addEventListener('click', function (e) {
         e.stopPropagation();
-        var open = navpanel.classList.toggle('open');
+        var open = navpanel.classList.toggle('open'); mbMorph(open);
         navbtn.setAttribute('aria-expanded', open ? 'true' : 'false');
         navpanel.setAttribute('aria-hidden', open ? 'false' : 'true');
       });
       document.addEventListener('click', function (e) {
         if (!navpanel.contains(e.target)) {
-          navpanel.classList.remove('open');
+          navpanel.classList.remove('open'); mbMorph(false);
           navbtn.setAttribute('aria-expanded', 'false');
           navpanel.setAttribute('aria-hidden', 'true');
         }
@@ -305,6 +305,40 @@
       });
     }, { threshold: 0 });
     observer.observe(title);
+
+    var mbPaths = navbtn ? navbtn.querySelectorAll('.mb-m') : [];
+    var mbIn = navbtn ? navbtn.querySelectorAll('.mb-in') : [];
+    var LINES = [7, 12, 17].map(function (y) { return [4, 7.2, 10.4, 13.6, 16.8, 20].map(function (x) { return [x, y]; }); });
+    function tilePts(cx, cy) { return [[cx - 4.6, cy - 0.9], [cx, cy - 3.2], [cx + 4.6, cy - 0.9], [cx + 4.6, cy + 1.8], [cx, cy + 4.1], [cx - 4.6, cy + 1.8]]; }
+    var TILES = [tilePts(15, 6.6), tilePts(8.6, 12), tilePts(15, 17.4)];
+    var mbT = 0, mbAnim = null;
+    function mbRender(t) {
+      for (var i = 0; i < 3; i++) {
+        var p = Math.min(1, Math.max(0, t * 1.24 - i * 0.12));
+        var e = p < .5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2;
+        var d = '';
+        for (var k = 0; k < 6; k++) {
+          var x = LINES[i][k][0] + (TILES[i][k][0] - LINES[i][k][0]) * e;
+          var y = LINES[i][k][1] + (TILES[i][k][1] - LINES[i][k][1]) * e;
+          d += (k ? ' L' : 'M') + x.toFixed(2) + ' ' + y.toFixed(2);
+        }
+        if (mbPaths[i]) { mbPaths[i].setAttribute('d', d + ' Z'); mbPaths[i].setAttribute('stroke-width', (2.2 - 0.6 * e).toFixed(2)); }
+        if (mbIn[i]) mbIn[i].setAttribute('opacity', Math.min(1, Math.max(0, (p - 0.55) / 0.45)).toFixed(2));
+      }
+    }
+    function mbMorph(open) {
+      if (!mbPaths.length) return;
+      if (mbAnim) cancelAnimationFrame(mbAnim);
+      var from = mbT, to = open ? 1 : 0, start = null;
+      function step(ts) {
+        if (!start) start = ts;
+        var raw = Math.min(1, (ts - start) / 420);
+        mbT = from + (to - from) * raw;
+        mbRender(mbT);
+        if (raw < 1) mbAnim = requestAnimationFrame(step); else mbAnim = null;
+      }
+      mbAnim = requestAnimationFrame(step);
+    }
   })();
 </script>
 
