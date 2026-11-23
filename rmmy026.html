@@ -201,6 +201,11 @@
   .track .feat { font-weight:400; font-size:13px; color:#26292b; }
   .track .tartist { color:var(--muted); font-size:12px; margin-top:1px; }
   footer { margin-top:26px; text-align:center; font-size:12px; color:#33383c; }
+  .snsrow { display:flex; gap:20px; align-items:center; justify-content:center; }
+  .snsrow a { display:inline-flex; line-height:0; }
+  .snsrow img { width:26px; height:26px; display:block; }
+  .snsrow img.xicon { width:20px; height:20px; }
+  .snsrow a:hover { opacity:.65; }
   footer a { color:#33383c; }
   footer a:hover { color:var(--accent); }
   @media (max-width:480px) {
@@ -249,6 +254,7 @@
     .navbtn { box-shadow:none; }
     .navpanel { box-shadow:0 12px 30px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.14); }
     .navpanel a:hover { background:rgba(255,255,255,.10); }
+    .snsrow img.xicon { content:url("https://cdn.simpleicons.org/x/white"); }
     footer, footer a { color:#9AA5AD; }
     .minibar-inner { background:rgba(42,49,56,.85); box-shadow:0 6px 18px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.14); }
     .minibar.visible .minibar-inner { animation:none; }
@@ -324,7 +330,12 @@
   </div>
 
   <footer>
-    <a href="https://rummyrecords.com/">rummyrecords.com</a> ・ <a href="https://rummyrecords.bandcamp.com/">Bandcamp</a>
+    <div class="snsrow">
+      <a href="https://rummyrecords.bandcamp.com/" aria-label="Bandcamp"><img src="https://cdn.simpleicons.org/bandcamp" alt="Bandcamp" width="26" height="26"></a>
+      <a href="https://twitter.com/rummyrecords" aria-label="X (Twitter)"><img class="xicon" src="https://cdn.simpleicons.org/x" alt="X (Twitter)" width="26" height="26"></a>
+      <a href="https://soundcloud.com/rummy-records" aria-label="SoundCloud"><img src="https://cdn.simpleicons.org/soundcloud" alt="SoundCloud" width="26" height="26"></a>
+      <a href="https://www.youtube.com/@rummyrecords" aria-label="YouTube"><img src="https://cdn.simpleicons.org/youtube" alt="YouTube" width="26" height="26"></a>
+    </div>
   </footer>
 
 <script>
