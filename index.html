@@ -114,7 +114,7 @@
         <div class="pmeta" id="pmeta"></div>
       </div>
     </div>
-    <iframe id="pframe" title="Bandcamp player" loading="lazy" seamless></iframe>
+    <iframe id="pframe" title="Bandcamp player" loading="lazy" allow="autoplay" seamless></iframe>
     <div class="pbtns">
       <a class="pbtn" id="ppage" href="#">この作品のページへ</a>
       <button class="pbtn" id="pagain" type="button"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 5l8.5 7L6 19z"/><rect x="16.4" y="5" width="2.6" height="14" rx="0.6"/></svg>もう一曲</button>
@@ -202,7 +202,7 @@
       ttl.textContent = r.t; art.textContent = r.a;
       meta.textContent = r.c + ' ・ ' + r.d;
       page.href = r.f + '.html';
-      frame.src = 'https://bandcamp.com/EmbeddedPlayer/album=' + r.id + '/size=small/bgcol=ffffff/linkcol=c67223/transparent=true/';
+      frame.src = 'https://bandcamp.com/EmbeddedPlayer/album=' + r.id + '/size=small/bgcol=ffffff/linkcol=c67223/transparent=true/autoplay=true/';
     }
     function openCard() {
       pick();
