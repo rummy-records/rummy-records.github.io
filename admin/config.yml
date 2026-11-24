@@ -1,0 +1,173 @@
+# rummy records — Decap CMS 設定（フェーズ4準備）
+# 項目定義は data/releases/*.yaml の実データ（全30件のキー実態調査済み）に
+# 合わせてある。レンダラ（build/）が読むキーはすべてカバーする。
+
+backend:
+  name: github
+  repo: rummy-records/rummy-records.github.io
+  branch: main
+  auth_type: pkce
+  # GitHub OAuth App 作成済み（2026-11-25）。Client ID は公開識別子。
+  # コールバックURL: https://rummyrecords.com/admin/
+  app_id: "Ov23liHKxjlZGQdusKp2"
+
+# 下書き → レビュー → 公開（PR マージで初めて公開される承認制）
+publish_mode: editorial_workflow
+
+media_folder: img
+public_folder: /img
+
+site_url: https://rummyrecords.com
+display_url: https://rummyrecords.com
+
+collections:
+  - name: releases
+    label: リリース
+    label_singular: リリース
+    folder: data/releases
+    create: true
+    identifier_field: cat
+    # ファイル名は file 項目（rmmyXXX）から決める
+    slug: "{{file}}"
+    summary: "{{cat}} {{title}} — {{artist}}"
+    fields:
+      - { name: cat, label: 品番（RMMY-XXX）, widget: string }
+      - { name: file, label: ファイル名（rmmyXXX）, widget: string }
+      - { name: title, label: タイトル, widget: string }
+      - { name: artist, label: アーティスト, widget: string }
+      - name: date
+        label: リリース日
+        widget: datetime
+        format: "YYYY-MM-DD"
+        date_format: "YYYY-MM-DD"
+        time_format: false
+      - { name: news_text, label: NEWS告知文の上書き（任意）, widget: string, required: false, hint: '省略時は「RMMY-XXX「タイトル」リリース」で自動生成される' }
+      - { name: news_date, label: NEWS告知の日付表示（任意）, widget: string, required: false, hint: '省略時は MM/DD（ゼロ詰め）。例: 4/28' }
+      - { name: news_skip, label: NEWS告知を自動生成しない, widget: boolean, required: false, default: false, hint: 合併告知など、告知を手動で載せる場合に使う }
+      - { name: news_after, label: NEWS告知を同日の手動NEWSより後に載せる, widget: boolean, required: false, default: false }
+      - name: art
+        label: ジャケット画像
+        widget: image
+        media_folder: img
+        public_folder: img
+        required: false
+      - { name: tagline, label: キャッチコピー（代表の1行）, widget: text, required: false }
+      - { name: mini_artist, label: ミニバー用アーティスト表記（任意）, widget: string, required: false }
+      - { name: credits, label: クレジット（1行表記・任意）, widget: string, required: false }
+      - { name: credits_first, label: クレジットをキャッチコピーより前に置く, widget: boolean, required: false, default: false }
+      - name: license
+        label: ライセンス
+        widget: select
+        options: ["by-nc"]
+        required: false
+        hint: by-nc = CC BY-NC 4.0。無指定なら表示なし
+      - { name: special, label: Special Site URL（任意）, widget: string, required: false }
+      - { name: special_off, label: Special Site を無効表示にする, widget: boolean, required: false, default: false }
+      - { name: extra_meta, label: メタ行の追加テキスト（任意）, widget: string, required: false }
+      - { name: info, label: 補足クレジット行（任意）, widget: string, required: false }
+      - { name: note, label: トラック下の注記（任意）, widget: text, required: false }
+      - { name: bandcamp_id, label: Bandcamp アルバムID（シャッフル試聴用・任意）, widget: number, value_type: int, required: false }
+      - { name: suspended, label: 公開停止（ページを作らず一覧でグレー表示）, widget: boolean, required: false, default: false }
+      - name: pre
+        label: 特設テキスト（冒頭の段落）
+        widget: list
+        required: false
+        collapsed: true
+        field: { name: item, label: 段落, widget: text }
+      - name: stores
+        label: ストアリンク
+        widget: list
+        collapsed: true
+        fields:
+          - name: key
+            label: ストア
+            widget: select
+            options:
+              - { label: Bandcamp, value: bandcamp }
+              - { label: Spotify, value: spotify }
+              - { label: Apple Music, value: applemusic }
+              - { label: YouTube Music, value: youtubemusic }
+              - { label: Amazon Music, value: amazonmusic }
+              - { label: SoundCloud, value: soundcloud }
+              - { label: YouTube, value: youtube }
+              - { label: YouTube（PV）, value: youtube_pv }
+              - { label: Free Download, value: download }
+          - { name: url, label: URL（空欄 = 配信停止中表示）, widget: string, required: false }
+      - name: tracks
+        label: 曲目
+        widget: list
+        collapsed: true
+        fields:
+          - { name: title, label: 曲名, widget: string }
+          - { name: artist, label: アーティスト（任意）, widget: string, required: false }
+          - { name: feat, label: フィーチャリング（任意）, widget: string, required: false }
+          - { name: genre, label: ジャンル（任意）, widget: string, required: false }
+          - { name: note, label: 注記（任意）, widget: string, required: false }
+      - { name: bonus_title, label: ボーナストラック見出し（任意）, widget: string, required: false }
+      - name: bonus
+        label: ボーナストラック
+        widget: list
+        required: false
+        collapsed: true
+        fields:
+          - { name: title, label: 曲名, widget: string }
+          - { name: artist, label: アーティスト（任意）, widget: string, required: false }
+          - { name: feat, label: フィーチャリング（任意）, widget: string, required: false }
+          - { name: genre, label: ジャンル（任意）, widget: string, required: false }
+          - { name: note, label: 注記（任意）, widget: string, required: false }
+      - name: sections
+        label: 特設セクション
+        widget: list
+        required: false
+        collapsed: true
+        types:
+          - name: staff
+            label: クレジット表（CREDITS）
+            widget: object
+            fields:
+              - { name: head, label: 見出し, widget: string, default: CREDITS }
+              - name: rows
+                label: 行
+                widget: list
+                fields:
+                  - { name: role, label: 役割, widget: string }
+                  - { name: name, label: 名前, widget: string }
+                  - { name: url, label: リンクURL（任意）, widget: string, required: false }
+          - name: lyrics
+            label: 歌詞
+            widget: object
+            fields:
+              - { name: head, label: 見出し, widget: string, default: LYRICS }
+              - name: songs
+                label: 曲
+                widget: list
+                fields:
+                  - { name: title, label: 曲名, widget: string }
+                  - { name: text, label: 歌詞, widget: text }
+          - name: embed
+            label: 埋め込み（SoundCloud等）
+            widget: object
+            fields:
+              - { name: head, label: 見出し, widget: string }
+              - { name: url, label: 埋め込みURL, widget: string }
+
+  - name: news
+    label: NEWS
+    description: 'リリース告知はリリース登録時に自動生成されるので、ここには載せないでください。ここは M3 出展・イベント・公募など、リリース告知以外の NEWS 専用です（公開停止中の作品の告知は自動生成されないため、必要な場合はここに手動で追加してください）。'
+    files:
+      - name: news
+        label: NEWS年表
+        file: data/news.yaml
+        fields:
+          - name: years
+            label: 年表
+            widget: list
+            fields:
+              - { name: year, label: 年（YYYY）, widget: string }
+              - name: items
+                label: 項目
+                widget: list
+                fields:
+                  - { name: date, label: 日付（M/DD）, widget: string }
+                  - { name: text, label: 本文, widget: string }
+                  - { name: link, label: リンク先（rmmyXXX・任意）, widget: string, required: false }
