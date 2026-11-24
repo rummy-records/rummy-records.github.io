@@ -1,0 +1,52 @@
+name: Build and deploy site
+
+# データ・ビルド・管理画面まわりの変更で自動ビルド＆デプロイする。
+# Decap の編集ワークフローが作る下書きブランチ（cms/*）は main でないため
+# 対象外で、PR がマージされて初めて公開される。
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'data/**'
+      - 'build/**'
+      - 'admin/**'
+      - 'img/**'
+      - 'CNAME'
+      - '.github/workflows/build.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: pip install -r build/requirements.txt
+      - name: Build site into _site/
+        run: python3 build/build.py
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
