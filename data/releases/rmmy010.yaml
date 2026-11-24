@@ -1,0 +1,26 @@
+cat: RMMY-010
+file: rmmy010
+title: Rummy Records × Beat Stratos Remix Compilation
+artist: Various Artists
+date: '2016-02-04'
+art: img/rmmy010.png
+tagline: ネットレーベルBeat Stratosとのコラボレーション・リミックス・トラック4曲。<br>今後とも、おつきあいのほど。
+credits: null
+license: by-nc
+stores:
+- key: download
+  url: https://mylnrhi8ro.m4.valueserver.jp/download/rmmy010.zip
+- key: soundcloud
+  url: https://soundcloud.com/rummy-records/sets/rummy-records-beat-stratos
+- key: youtube
+  url: https://www.youtube.com/watch?v=bL5GNZTLWGM
+tracks:
+- title: Locke - to you (BSer Remix)
+  artist: BSer
+- title: gu~kun - ヒロイン (047 remix)
+  artist: '047'
+- title: 047 - UP TO YOU (gu-kun remix)
+  artist: gu~kun
+- title: Nennen - birthday (0kash Remix)
+  artist: 0kash
+news_text: RMMY-010「rummy records + Beat Stratos Remix Compilation」リリース

@@ -1,0 +1,42 @@
+cat: RMMY-015
+file: rmmy015
+title: rummy complex
+artist: Various Artists
+date: '2016-10-30'
+art: img/rmmy015.jpg
+tagline: ジャンルをComplextroに限定した公募の優秀作品を含む、全9曲のフルアルバム。
+credits_first: true
+sections:
+- kind: staff
+  head: CREDITS
+  rows:
+  - role: Artwork
+    name: よことも
+stores:
+- key: bandcamp
+  url: https://rummyrecords.bandcamp.com/album/rummy-complex
+- key: youtube
+  url: https://www.youtube.com/watch?v=NgdIF3-ZasY
+pre:
+- my inferiority complex<br>your superiority complex<br>this album is compilation that contains 9 complextro tunes
+- わたしのコンプレックス<br>あなたのコンプレックス<br>コンプレクストロ9曲のコンピレーションアルバム
+tracks:
+- title: Cometgazer
+  artist: BSer
+- title: To the Future
+  artist: JMode
+- title: Rebellious
+  artist: LiPiNS (a.k.a. PUNISHER)
+- title: Fighting The Darkness
+  artist: サイトウ
+- title: Lebenstrieb
+  artist: Rururu
+- title: Fixer
+  artist: nurumayu
+- title: LOCK THAT SHIT DOWN
+  artist: '047'
+- title: Snowgraph
+  artist: Phracta
+- title: Around the world
+  artist: Evelyn Color & TakeOverBlood
+bandcamp_id: 993134360

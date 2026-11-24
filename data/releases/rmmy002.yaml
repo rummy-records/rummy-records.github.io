@@ -1,0 +1,59 @@
+cat: RMMY-002
+file: rmmy002
+title: rummy1:Banquet
+artist: Various Artists
+date: '2015-04-26'
+art: img/rmmy002.jpg
+tagline: 実力派ゲスト7名を招いて制作された全12曲のフルアルバム。
+credits_first: true
+sections:
+- kind: staff
+  head: CREDITS
+  rows:
+  - role: Artwork
+    name: 047, Nennen
+stores:
+- key: bandcamp
+  url: https://rummyrecords.bandcamp.com/album/rummy1-banquet
+- key: youtube
+  url: https://www.youtube.com/watch?v=4H4DtDIMnkA
+pre:
+- コーズ・スプリング・イズ・ヒア、rummy recordsがオフラインに登場です。<br>バンケット・アンダー・チェリー・ブロッサム、7人のゲストも駆けつけました。<br>東京にてお待ちしております。<br>素敵な出会いがありますように。
+tracks:
+- title: Agita
+  artist: gu~kun
+- title: Spectacle catch
+  artist: lazward
+- title: Maple Sweet
+  artist: '047'
+- title: Happy Sunny Day
+  artist: Street
+- title: Vanquish!
+  artist: dusKape
+- title: Onlooker
+  artist: DJ DiA
+- title: 22.5 UME
+  artist: BJ.chika
+- title: Aquaring
+  artist: torash
+- title: Lepus
+  artist: Getty
+- title: Coral Horizons
+  artist: nurumayu
+- title: Logical Jumper
+  artist: BSer
+- title: Cotswolds
+  artist: Nennen
+bonus:
+- title: OUTRIGHT LIE
+  artist: '047'
+- title: White Evil
+  artist: BSer
+- title: Xaxatorte
+  artist: dusKape
+- title: dance music
+  artist: Nennen
+- title: Hearthfire
+  artist: nurumayu
+bonus_title: CD BONUS TRACKS — rummy DEMO
+bandcamp_id: 4143630914

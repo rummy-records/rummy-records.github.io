@@ -1,0 +1,22 @@
+cat: RMMY-024
+file: rmmy024
+title: singing and dancing
+artist: Nennen
+date: '2019-03-29'
+art: img/rmmy024.png
+tagline: 一緒に歌って踊って。
+credits: null
+license: by-nc
+stores:
+- key: download
+  url: https://mylnrhi8ro.m4.valueserver.jp/download/rmmy024.zip
+- key: soundcloud
+  url: https://soundcloud.com/nennen/sets/singing-and-dancing
+- key: youtube
+  url: https://www.youtube.com/watch?v=qkG8FpLzl88
+tracks:
+- title: singing voice
+- title: dance music
+- title: flower island
+- title: dance music (reunion)
+news_text: RMMY-024 「Nennen - singing and dancing」リリース

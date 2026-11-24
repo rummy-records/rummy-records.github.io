@@ -1,0 +1,20 @@
+cat: RMMY-014
+file: rmmy014
+title: Phracta Chip EP
+artist: Phracta
+date: '2016-05-13'
+art: img/rmmy014.png
+tagline: Nennenの愛弟子Phractaによる、素朴でどこか懐かしいチップチューンEP。<br>RMMY-001よりHearthfireのアレンジも収録。
+credits: null
+license: by-nc
+stores:
+- key: download
+  url: https://mylnrhi8ro.m4.valueserver.jp/download/rmmy014.zip
+- key: youtube
+  url: https://www.youtube.com/watch?v=r0CZg_pkSt4
+tracks:
+- title: Steam Girls’ Riot
+- title: Pico-Pixel
+- title: Jackpot777
+- title: Hearthfire (Phracta Chiplextro Mix)
+- title: Miiko (the Internet Neko-Chan Mix)

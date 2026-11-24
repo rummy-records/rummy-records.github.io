@@ -1,0 +1,29 @@
+cat: RMMY-004
+file: rmmy004
+title: Fragrant
+artist: '047'
+date: '2015-09-09'
+art: img/rmmy004.png
+tagline: rummy records第4弾リリースは、047によるフルアルバム「Fragrant」。<br>“大阪”をテーマにした色々な香りの11曲。
+credits: null
+license: by-nc
+stores:
+- key: download
+  url: https://mylnrhi8ro.m4.valueserver.jp/download/rmmy004.zip
+- key: soundcloud
+  url: https://soundcloud.com/zero_yon_nana/spring-collection
+- key: youtube
+  url: https://www.youtube.com/watch?v=fVLDDU-ry44
+tracks:
+- title: '908'
+- title: He is a Ninja (Album-mix)
+- title: Sense of Wonder
+- title: Maple Sweet
+- title: SPRING COLLECTION
+- title: Fragrant
+- title: OUTRIGHT LIE
+- title: HEAVY COMBAT
+- title: CONCRETE SYMPHONY
+- title: Trice of Time
+- title: Midnight Waltz
+news_text: RMMY-004「047 - Fragrant」リリース

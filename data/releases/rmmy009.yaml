@@ -1,0 +1,25 @@
+cat: RMMY-009
+file: rmmy009
+title: rummy records 1st Anniversary
+artist: Various Artists
+date: '2016-01-19'
+art: img/rmmy009.jpg
+tagline: ありがとう 1周年。<br>感謝の気持ちを込めて。
+credits: null
+license: by-nc
+note: Track 2. 劇団四次元STAGE 劇団紹介PV テーマソング
+stores:
+- key: download
+  url: https://mylnrhi8ro.m4.valueserver.jp/download/rmmy009.zip
+- key: soundcloud
+  url: https://soundcloud.com/rummy-records/sets/rummy-records-1st-anniversary
+- key: youtube
+  url: https://www.youtube.com/watch?v=R1ezruPTGSM
+tracks:
+- title: OUTRIGHT LIE (BSer’s 1st Anniversary Remix)
+  artist: BSer
+- title: 908 (extended mix)
+  artist: '047'
+- title: dance music (reunion)
+  artist: Nennen
+news_after: true

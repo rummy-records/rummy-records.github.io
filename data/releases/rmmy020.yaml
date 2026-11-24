@@ -1,0 +1,31 @@
+cat: RMMY-020
+file: rmmy020
+title: SEAGLASS
+artist: '047'
+date: '2017-10-19'
+art: img/rmmy020.png
+tagline: 047によるオリジナルアルバム。ゼロ年代フューチャーポップを現代的に解釈しながら、無機質なエレクトロニカ要素を取り入れた色濃い作品となっている。
+credits: null
+license: by-nc
+pre:
+- DIVE INTO SKYSCRAPERS<br>前作から2年ぶりとなる今作のテーマは「上京」。
+stores:
+- key: download
+  url: https://mylnrhi8ro.m4.valueserver.jp/download/rmmy020.zip
+- key: soundcloud
+  url: https://soundcloud.com/zero_yon_nana/urban-reef
+- key: youtube
+  url: https://www.youtube.com/watch?v=7qEC7TEfYzI
+tracks:
+- title: DIVE
+- title: LOCK THAT SXXT DOWN
+- title: MODERNITY
+- title: SIGNAL MAN
+- title: MY DEAR PRO-53
+- title: UP TO YOU
+  feat: 女子力
+- title: 告白
+- title: SEAGLASS
+  feat: しょうり
+- title: URBAN REEF
+news_text: RMMY-020「047 - SEAGLASS」リリース

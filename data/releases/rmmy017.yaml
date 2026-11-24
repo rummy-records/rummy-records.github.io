@@ -1,0 +1,26 @@
+cat: RMMY-017
+file: rmmy017
+title: picnic
+artist: Nennen
+date: '2017-01-19'
+art: img/rmmy017.png
+tagline: 元気いっぱいの6曲。<br>リミックス2曲入り。
+credits: null
+license: by-nc
+stores:
+- key: download
+  url: https://mylnrhi8ro.m4.valueserver.jp/download/rmmy017.zip
+- key: soundcloud
+  url: https://soundcloud.com/nennen/sets/picnic
+- key: youtube
+  url: https://www.youtube.com/watch?v=aORpy3paWtI
+tracks:
+- title: picnic
+- title: anywhere
+- title: birthday
+- title: halfway
+- title: greenworld
+- title: starlit
+- title: anywhere (nurumayu remix)
+- title: birthday (0kash remix)
+news_text: RMMY-017「Nennen - picnic」リリース

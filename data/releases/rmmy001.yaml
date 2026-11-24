@@ -1,0 +1,31 @@
+cat: RMMY-001
+file: rmmy001
+title: rummy DEMO
+artist: Various Artists
+date: '2015-01-19'
+art: img/rmmy001.jpg
+tagline: rummy records第1弾リリースは、テクノポップからエレクトロニカまで、レーベルカラーを強く打ち出した5曲がパッケージングされたEP「rummy DEMO」。
+credits: null
+license: by-nc
+stores:
+- key: download
+  url: https://mylnrhi8ro.m4.valueserver.jp/download/rmmy001.zip
+- key: soundcloud
+  url: https://soundcloud.com/rummy-records/sets/rummy-demo
+- key: youtube
+  url: https://www.youtube.com/watch?v=htLifc9qqeM
+pre:
+- rummy records、始動
+- 1995年、Microsoft Windows 95発売。電子頭脳は誰もがその手に、夢みるネットワーク、世界規模の伝達。
+- 2015年、デジタルネイティブ第1世代らによりネットレーベル「rummy records」設立。進化するコンピュータ、変わらぬシュプレヒコール。第1弾リリースはレーベルカラーを強く打ち出した5曲がパッケージングされたEP「rummy DEMO」。
+tracks:
+- title: OUTRIGHT LIE
+  artist: '047'
+- title: White Evil
+  artist: BSer
+- title: Xaxatorte
+  artist: dusKape
+- title: dance music
+  artist: Nennen
+- title: Hearthfire
+  artist: nurumayu

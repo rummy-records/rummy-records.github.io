@@ -1,0 +1,38 @@
+cat: RMMY-027
+file: rmmy027
+title: ヒカリのパレード
+artist: Various Artists
+date: '2021-04-16'
+art: img/rmmy027.jpg
+tagline: お祝いの歌。
+credits_first: true
+sections:
+- kind: staff
+  head: CREDITS
+  rows:
+  - role: Artwork
+    name: toki nakayama
+stores:
+- key: bandcamp
+  url: https://rummyrecords.bandcamp.com/album/-
+- key: spotify
+  url: https://open.spotify.com/intl-ja/album/2KDd2sVk2qtrUVs2z8M9HT
+- key: applemusic
+  url: https://music.apple.com/jp/album/%E3%83%92%E3%82%AB%E3%83%AA%E3%81%AE%E3%83%91%E3%83%AC%E3%83%BC%E3%83%89-single/1658753968?at=1001lbRT&ct=1353338
+- key: youtubemusic
+  url: https://music.youtube.com/playlist?list=OLAK5uy_nj4iuc6I2m4SvjXLNRnfRGiUNLvyhYuVk
+- key: amazonmusic
+  url: https://music.amazon.co.jp/albums/B0BPGS2289?tag=ton08-20
+- key: soundcloud
+  url: https://soundcloud.com/rummy-records/sets/quc2kqgnzbsf
+- key: youtube
+  url: https://www.youtube.com/watch?v=Qv4mXSx5oUQ&list=PLVZ_K_lgV9DWI1p-_w94R2yJH4QghtGuZ
+tracks:
+- title: ヒカリのパレード
+  feat: KYOQO
+  artist: キョド, zero yon nana & Nennen
+- title: leaper
+  artist: zero yon nana
+- title: interstellar
+  artist: inphey
+bandcamp_id: 440035753

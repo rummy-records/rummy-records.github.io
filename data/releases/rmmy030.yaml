@@ -1,0 +1,52 @@
+cat: RMMY-030
+file: rmmy030
+title: PMMA HOUSING
+artist: Various Artists
+date: '2024-04-28'
+art: img/rmmy030.jpg
+tagline: 透き通って 見え透いて
+credits_first: true
+sections:
+- kind: staff
+  head: CREDITS
+  rows:
+  - role: Artwork
+    name: zero yon nana
+stores:
+- key: bandcamp
+  url: https://rummyrecords.bandcamp.com/album/pmma-housing
+- key: spotify
+  url: https://open.spotify.com/intl-ja/album/4CErqcKbMYCQjeKiIiO7za
+- key: applemusic
+  url: https://music.apple.com/jp/album/pmma-housing/1745283341?at=1001lbRT&ct=3251847
+- key: youtubemusic
+  url: https://music.youtube.com/playlist?list=OLAK5uy_kdUM_CLKMqKCTaT0b9fNYf0JNS-bOnC6I
+- key: amazonmusic
+  url: https://music.amazon.co.jp/albums/B0D3KT1ZCY?tag=ton08-20
+- key: youtube
+  url: https://www.youtube.com/watch?v=rBmGXgTn4Jo&list=PLVZ_K_lgV9DWI1p-_w94R2yJH4QghtGuZ
+tracks:
+- title: 奔る
+  feat: 初音ミク
+  artist: wf
+- title: Pursue
+  artist: Danjiki
+- title: 'Your Choices:'
+  artist: キョド
+- title: Key Lime Float
+  artist: gentsuki
+- title: melt
+  artist: dusKape
+- title: Almond & Milk
+  artist: RK-turn
+- title: cross the line
+  feat: Ryo, GUMI
+  artist: キョド
+- title: Prime Time Blue
+  feat: 夏色花梨
+  artist: zero yon nana
+- title: あと数センチ
+  feat: 知声
+  artist: ちびファイ
+bandcamp_id: 429428526
+news_date: 4/28

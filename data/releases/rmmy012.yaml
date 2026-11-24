@@ -1,0 +1,40 @@
+cat: RMMY-012
+file: rmmy012
+title: Top Secret
+artist: BSer
+date: '2016-04-24'
+art: img/rmmy012.jpg
+tagline: M3 2016春のための新譜はBSerによる初のアルバムCD。<br>リミキサーとしてラミレコメンバーやinphey氏も駆けつけました。
+credits_first: true
+credits: null
+stores:
+- key: bandcamp
+  url: https://rummyrecords.bandcamp.com/album/top-secret
+- key: youtube
+  url: https://www.youtube.com/watch?v=_gOKahAwZi0
+pre:
+- 不幸重ねの近未来<br>時雨を降らせた最後のエラー<br>冷え切ったディストピアで<br>Can you keep the "Top Secret" ?
+sections:
+- kind: staff
+  head: CREDITS
+  rows:
+  - role: Produce, Compose (Tr.1-6)
+    name: BSer
+  - role: Guest (Tr.7)
+    name: dusKape
+  - role: Jacket Design, Guest (Tr.8)
+    name: '047'
+  - role: Guest (Tr.9)
+    name: inphey
+tracks:
+- title: Top Secret
+- title: Syntax Error
+- title: Fumble
+- title: Neo Dystopia (Update)
+- title: SIGLENI
+- title: Die Letzten Tage (Update)
+- title: Top Secret (dusKape Chilly House Remix)
+- title: Neo Dystopia (047 Neo 00s Remix)
+- title: Neo Dystopia (Inphey Future Electro Remix)
+bandcamp_id: 922485361
+news_text: RMMY-012「BSer - Top Secret」、RMMY-013「dusKape & BJ.chika - -Degistalgia- デジスタルジア」リリース

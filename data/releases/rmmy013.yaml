@@ -1,0 +1,52 @@
+cat: RMMY-013
+file: rmmy013
+title: -Degistalgia- デジスタルジア
+artist: dusKape and BJ.chika
+date: '2016-04-24'
+art: img/rmmy013.jpg
+tagline: M3 2016春、もう一つの新譜。<br>dusKapeとBJ.chikaによる合作アルバムが、満を持して登場。
+credits_first: true
+stores:
+- key: bandcamp
+  url: https://rummyrecords.bandcamp.com/album/degistalgia
+- key: youtube
+  url: https://www.youtube.com/watch?v=Fl08Hj4tHNw
+pre:
+- 覚えのない懐かしさをあなたに。<br>人は自らの経験を通して学び、成長し、個性を作り上げていく。<br>そこからアウトプットされる作品には、歩んできた過去が見え隠れする。<br>二人の過去を紡ぎ合い、郷愁とともにデジタルな未来へ。<br>dusKapeとBJ.chikaによる合作のすべてがここに。
+sections:
+- kind: staff
+  head: CREDITS
+  rows:
+  - role: Produce, Compose, Remix, etc
+    name: BJ.chika
+  - role: Compose, Remix
+    name: dusKape
+  - role: Artwork
+    name: minoson
+tracks:
+- title: HiTechNostAlgia
+  artist: BJ.chika
+- title: Dreamin’ chick -yume miru hina-
+  artist: dusKape vs BJ.chika (Sampling by noise.inc)
+- title: そしてキャラメルの空へ歩み出す -dusKape side-
+  artist: 'Remixed by dusKape (Music: BJ.chika)'
+- title: xaxatorte 90’s degital mix
+  artist: 'Remixed by BJ.chika (Music: dusKape)'
+- title: Milky Star 2016 ver.
+  artist: dusKape vs BJ.chika
+- title: 23KOMA3
+  artist: BJ.chika
+- title: 22.5UME 2016 ver.
+  artist: 'Remixed by dusKape (Music: BJ.chika)'
+- title: 21ANKO 2016 ver.
+  artist: dusKape vs BJ.chika
+- title: 六月の雨 2016 ver.
+  artist: 'Remixed by BJ.chika (Music: dusKape)'
+- title: Holy Bamboo Jungle 2016 ver.
+  artist: dusKape vs BJ.chika
+- title: Reflections of the calm sea 2016 ver.
+  artist: BJ.chika
+- title: Desist -Algia
+  artist: BJ.chika
+bandcamp_id: 202528034
+news_skip: true

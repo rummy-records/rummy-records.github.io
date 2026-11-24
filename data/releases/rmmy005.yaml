@@ -1,0 +1,45 @@
+cat: RMMY-005
+file: rmmy005
+title: rummy2:Metropolis
+artist: Various Artists
+date: '2015-10-25'
+art: img/rmmy005.jpg
+tagline: 実力派ゲスト6名を招いて制作された全11曲のフルアルバム。
+credits_first: true
+sections:
+- kind: staff
+  head: CREDITS
+  rows:
+  - role: Artwork
+    name: 047, Metropolis (1927)
+stores:
+- key: bandcamp
+  url: https://rummyrecords.bandcamp.com/album/rummy2-metropolis
+- key: youtube
+  url: https://www.youtube.com/watch?v=w7rm-UpOEQU
+pre:
+- 「脳と手の媒介者は、心でなくてはならない」<br>ゴシック調の摩天楼は過去を見つめた。<br>LIFO、最初は幾何学、心は最後。<br>月の光、青信号、午前四時の鐘が鳴る。<br>ディストピアも、ユートピアも、メトロポリスの明日は―――
+tracks:
+- title: Last In, First Out, Communication
+  artist: Nennen
+- title: SIGNAL MAN
+  artist: '047'
+- title: Stylu-S-Lusty
+  artist: BJ.chika
+- title: sparse
+  artist: dusKape
+- title: eu topos
+  artist: AppleMintia
+- title: Tha Palace at 4 a.m.
+  artist: farbtafel
+- title: Teiresias
+  artist: よことも
+- title: Topology Space
+  artist: nurumayu
+- title: Neo Dystopia
+  artist: BSer
+- title: Past Phantom
+  artist: Raveile
+- title: Luna City
+  artist: inphey
+bandcamp_id: 195227992

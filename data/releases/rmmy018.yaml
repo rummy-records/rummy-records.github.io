@@ -1,0 +1,31 @@
+cat: RMMY-018
+file: rmmy018
+title: Last Season / 告白
+artist: gu~kun / 047
+date: '2017-03-26'
+art: img/rmmy018.jpg
+tagline: さよならの代わりに。
+license: by-nc
+sections:
+- kind: staff
+  head: CREDITS
+  rows:
+  - role: Jacket, Header Photo
+    name: ai3310X
+pre:
+- 跳ねまわる ベースライン に 乗って、別れの季節 が やってきました。<br>トラックメイカー gu~kunと047による 切なくて ポップな スプリットシングル。
+stores:
+- key: download
+  url: https://mylnrhi8ro.m4.valueserver.jp/download/rmmy018.zip
+- key: soundcloud
+  url: https://soundcloud.com/rummy-records/sets/last-season
+- key: youtube
+  url: https://www.youtube.com/watch?v=ZhQMQi3NCs8
+tracks:
+- title: Last Season
+  artist: gu~kun
+- title: 告白
+  artist: '047'
+- title: 告白 (Original Instrumental)
+  artist: '047'
+news_text: RMMY-018「gu~kun / 047 - Last Season / 告白」リリース

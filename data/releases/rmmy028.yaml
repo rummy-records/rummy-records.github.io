@@ -1,0 +1,56 @@
+cat: RMMY-028
+file: rmmy028
+title: In 10 Years Time
+artist: Various Artists
+date: '2022-12-11'
+art: img/rmmy028.jpg
+tagline: 10年たったら<br>ひとつも覚えていないかもしれない<br>10年たったら<br>もう音楽は諦めているかもしれない<br>音楽制作サークル ラムレーズン10周年記念コンピレーション
+credits: null
+license: by-nc
+special: https://rmmy028.tumblr.com
+stores:
+- key: bandcamp
+  url: https://rummyrecords.bandcamp.com/album/in-10-years-time
+- key: spotify
+  url: https://open.spotify.com/intl-ja/album/2YW2Pmi77SxBV7WSM7lHuo
+- key: applemusic
+  url: https://music.apple.com/jp/album/in-10-years-time/1655042171
+- key: youtubemusic
+  url: https://music.youtube.com/playlist?list=OLAK5uy_nJiYEsTrKz9B5UOJcYhfDOjkm9XoTydgw
+- key: amazonmusic
+  url: https://music.amazon.co.jp/albums/B0BMZ6PZCH?tag=ton08-20
+- key: youtube
+  url: https://www.youtube.com/watch?v=lXvTI4Tq1jk&list=PLVZ_K_lgV9DWI1p-_w94R2yJH4QghtGuZ
+tracks:
+- title: Res(e)t in Peace
+  feat: 朱色
+  artist: ぎゃぷいち
+- title: Imagey
+  artist: tktt
+- title: ネバーランドへの逃避行
+  artist: キョド with しょうり
+- title: ガラスの Fragile 関係 Love
+  artist: BSer, zero yon nana, キョド & ういぴー
+- title: Gerbera Rhapsody
+  artist: とくひろ
+- title: マガツヒ
+  artist: コペルニシウム
+- title: palm tree sprinkler
+  artist: ゆnovation
+- title: ポンポンがペイン
+  artist: ユウゾウ
+- title: Siciliana
+  artist: Fuink
+- title: SICILIANA ～走り出した時間は～
+  artist: Fuink
+- title: TimeFlies
+  artist: LiPiNS
+- title: FFTD (from future, to decade.)
+  artist: RK-turn
+- title: Twenty First Anko (Chill Remix)
+  artist: dusKape vs BJ.chika
+- title: たからもの (ver.Chis-A)
+  artist: トラン
+- title: I am
+  artist: Nennen
+bandcamp_id: 44918899

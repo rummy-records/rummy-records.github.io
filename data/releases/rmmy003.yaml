@@ -1,0 +1,23 @@
+cat: RMMY-003
+file: rmmy003
+title: Astrosphere EP
+artist: BSer
+date: '2015-07-07'
+art: img/rmmy003.png
+tagline: rummy recordsリリース第3弾は、七夕の夜にお送りするrummy recordsメンバーBSerの1stソロEP。
+credits: null
+license: by-nc
+stores:
+- key: download
+  url: https://mylnrhi8ro.m4.valueserver.jp/download/rmmy003.zip
+- key: youtube
+  url: https://www.youtube.com/watch?v=ifWlm5OYfmQ
+pre:
+- 七夕の夜にrummy recordsからの贈り物です。<br>BSerによる宇宙，夜空，都市，雪，天使をイメージした全5曲のEP。<br>皆様の願いが叶いますように。
+tracks:
+- title: Astrosphere
+- title: Frozen Sun (Extended Mix)
+- title: Invisible City
+- title: Snowy
+- title: Black Angel
+news_text: RMMY-003「BSer - Astrosphere EP」リリース

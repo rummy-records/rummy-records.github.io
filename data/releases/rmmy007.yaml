@@ -1,0 +1,33 @@
+cat: RMMY-007
+file: rmmy007
+title: Sweet Marmalade — Kyodo Works Best —
+artist: キョド
+date: '2016-01-15'
+art: img/rmmy007.jpg
+tagline: 2016年第1弾、キョドによる5人のボーカルをフィーチャーしたこだわりのポップスコレクション。
+credits: null
+license: by-nc
+special: http://kyodobest.tumblr.com/
+stores:
+- key: download
+  url: https://mylnrhi8ro.m4.valueserver.jp/download/rmmy007.zip
+- key: youtube
+  url: https://www.youtube.com/watch?v=j5nqWW-MahA
+tracks:
+- title: ホップ・スキップ・デイズ
+  artist: 山國恭子
+- title: 秋風のフィーネ
+  artist: ういぴー
+- title: あじさい
+  artist: タカヤマカナ
+- title: Pole Position
+  artist: キョド
+- title: 鐘の鳴る夜
+  artist: ういぴー
+- title: 翠の流星
+  artist: どっぺる
+- title: 裏通りの快楽
+  artist: ミナホシ
+- title: ラムレのアイス — Bossa ver. —
+  artist: タカヤマカナ
+news_text: RMMY-007「キョド - Sweet Marmalade — Kyodo Works Best —」リリース

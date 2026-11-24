@@ -1,0 +1,46 @@
+cat: RMMY-022
+file: rmmy022
+title: Bitter
+artist: ピコピコ団
+date: '2017-10-29'
+art: img/rmmy022.jpg
+tagline: にがさのかたまりほりこみほろり。<br>白昼夢型チップチューンユニット、ピコピコ団によりフィジカルリリース。
+credits_first: true
+credits: null
+stores:
+- key: bandcamp
+  url: https://rummyrecords.bandcamp.com/album/bitter
+- key: youtube
+  url: https://www.youtube.com/watch?v=JMTGWyQ3880
+sections:
+- kind: staff
+  head: CREDITS
+  rows:
+  - role: Pico1, Illustration
+    name: Phracta
+  - role: Pico2
+    name: Nennen
+  - role: Pico3, Vocal, Photo
+    name: Sakuruko
+  - role: Guest (Tr.11)
+    name: ゆnovation
+  - role: Guest (Tr.12)
+    name: BJ.chika
+  - role: Guest (Tr.13)
+    name: '047'
+tracks:
+- title: Polygonize
+- title: Maison de Rotta
+- title: UFOリック☆プリンセス
+- title: デイドリーム
+- title: トラブルシューター
+- title: adult
+- title: Psi Addicted
+- title: シグナル
+- title: Kaeru no Anthem
+- title: Reset…?
+- title: シグナル (ゆnovation Remix)
+- title: UFOリック☆プリンセス (BJ.chika Remix)
+- title: Kaeru no Anthem (047 Remix)
+bandcamp_id: 843918781
+news_text: RMMY-022「ピコピコ団 - Bitter」リリース

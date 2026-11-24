@@ -1,0 +1,41 @@
+cat: RMMY-023
+file: rmmy023
+title: Behind
+artist: Various Artists
+date: '2018-04-29'
+art: img/rmmy023.jpg
+tagline: 一枚の絵から紡がれる、七曲の物語ー。<br>ジャケットから着想を得るというコンセプトのもと作成された本コンピレーション。<br>七通りの世界観をお楽しみください。
+credits_first: true
+stores:
+- key: bandcamp
+  url: https://rummyrecords.bandcamp.com/album/behind
+- key: youtube
+  url: https://www.youtube.com/watch?v=bbjxk4TNu7Q
+sections:
+- kind: staff
+  head: CREDITS
+  rows:
+  - role: Web Design
+    name: Lingi
+  - role: CD Design
+    name: Lingi
+  - role: Movie
+    name: '047'
+  - role: Artwork
+    name: さんかくミズ
+tracks:
+- title: Floating Particles
+  artist: inphey
+- title: Sofia
+  artist: ちびファイ
+- title: Starry Fall
+  artist: RK-turn
+- title: 25.5 TOME
+  artist: BJ.chika
+- title: A Beautiful Nightmare
+  artist: ぎゃぷいち
+- title: Stand Alone
+  artist: 047, Lingi
+- title: Afterglow
+  artist: k.o_uncloud
+bandcamp_id: 3392419143

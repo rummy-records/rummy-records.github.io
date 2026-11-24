@@ -1,0 +1,24 @@
+cat: RMMY-021
+file: rmmy021
+title: C12
+artist: Lingi
+date: '2017-10-26'
+art: img/rmmy021.png
+tagline: ” これからも、変わっていきながら ”<br>BSerの別名義、Lingiによる変幻自在の3曲入りのEP。
+license: by-nc
+sections:
+- kind: staff
+  head: CREDITS
+  rows:
+  - role: Artwork
+    name: 藤村
+stores:
+- key: download
+  url: https://mylnrhi8ro.m4.valueserver.jp/download/rmmy021.zip
+- key: youtube
+  url: https://www.youtube.com/watch?v=wYdW7ThoiHw
+tracks:
+- title: C12
+- title: Factory Tour
+- title: Circus Kids
+news_text: RMMY-021 「Lingi - C12」リリース

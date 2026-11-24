@@ -1,0 +1,33 @@
+cat: RMMY-029
+file: rmmy029
+title: Nature Pop / サンデー / ルパートの涙
+artist: キョド, zero yon nana & BSer
+date: '2023-10-29'
+art: img/rmmy029.jpg
+tagline: もうちょっとだけ流そう 心騒ぐナンバー
+credits: null
+mini_artist: キョド & zero yon nana / zero yon nana & BSer
+stores:
+- key: bandcamp
+  url: https://rummyrecords.bandcamp.com/album/nature-pop
+- key: youtube_pv
+  url: https://www.youtube.com/watch?v=Z3qrw5bbNLw
+tracks:
+- title: Nature Pop
+  feat: Ryo, 夏色花梨
+  artist: キョド & zero yon nana
+- title: サンデー
+  feat: 夏色花梨
+  artist: キョド & zero yon nana
+- title: ルパートの涙
+  feat: ういぴー
+  artist: zero yon nana & BSer
+bonus:
+- title: Nature Pop (Instrumental)
+  artist: キョド & zero yon nana
+- title: サンデー (Instrumental)
+  artist: キョド & zero yon nana
+- title: ルパートの涙 (Instrumental)
+  artist: zero yon nana & BSer
+bonus_title: CD BONUS TRACKS
+bandcamp_id: 3220180280
