@@ -25,6 +25,8 @@ collections:
     label: リリース
     label_singular: リリース
     folder: data/releases
+    extension: yaml
+    format: yaml
     create: true
     identifier_field: cat
     # ファイル名は file 項目（rmmyXXX）から決める
