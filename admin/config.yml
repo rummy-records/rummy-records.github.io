@@ -6,10 +6,10 @@ backend:
   name: github
   repo: rummy-records/rummy-records.github.io
   branch: main
-  auth_type: pkce
-  # GitHub OAuth App 作成済み（2026-11-25）。Client ID は公開識別子。
-  # コールバックURL: https://rummyrecords.com/admin/
-  app_id: "Ov23liHKxjlZGQdusKp2"
+  # 認証は自前の Cloudflare Worker（rummy-decap-auth）が中継する。
+  # Decap の GitHub バックエンドは PKCE 非対応のため（2026-11-25 切替）。
+  # OAuth App「rummy records Decap CMS」のコールバックは Worker の /callback。
+  base_url: https://rummy-decap-auth.rummyrecords.workers.dev
 
 # 下書き → レビュー → 公開（PR マージで初めて公開される承認制）
 publish_mode: editorial_workflow
