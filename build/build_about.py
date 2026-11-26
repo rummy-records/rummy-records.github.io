@@ -50,7 +50,7 @@ doc = f"""<!DOCTYPE html>
       <li><a href="https://x.com/nennen2010">Nennen</a> <span class="role">(Organizer)</span></li>
       <li><a href="https://twitter.com/zero_yon_nana">zero yon nana</a> <span class="role">(Co-organizer)</span></li>
       <li><a href="https://twitter.com/BSer_Lingi">BSer / Lingi</a></li>
-      <li><a href="https://twitter.com/dusKape">dusKape</a></li>
+      <li><a href="https://x.com/bnsk_kyuru">dusKape</a></li>
       <li><a href="https://twitter.com/nurumayu">nurumayu</a></li>
     </ul>
   </div>
