@@ -135,6 +135,19 @@ def _news_date_tuple(s):
     return (int(m), int(d))
 
 
+def _fmt_news_date(s):
+    """NEWS の日付表示を 'M/D'（ゼロなし）に統一する。空・解釈不能はそのまま。"""
+    if not s:
+        return s
+    try:
+        t = _news_date_tuple(s)
+    except Exception:
+        return s
+    if t is None:
+        return s
+    return f"{t[0]}/{t[1]}"
+
+
 def _release_news_entry(r):
     """リリース1件から NEWS 告知エントリを生成する。
 
@@ -144,7 +157,7 @@ def _release_news_entry(r):
     """
     ymd = str(r["date"])  # YYYY-MM-DD（_fix で文字列化済み）
     m, d = int(ymd[5:7]), int(ymd[8:10])
-    date_str = r.get("news_date") or f"{m:02d}/{d:02d}"
+    date_str = _fmt_news_date(r.get("news_date")) or f"{m}/{d}"
     text = r.get("news_text") or f'{r["cat"]}「{r["title"]}」リリース'
     return (ymd[:4], (m, d), date_str, text, r["file"],
             bool(r.get("news_after")))
@@ -162,8 +175,8 @@ def load_years():
     """
     manual = {}
     for y in _load_yaml(os.path.join(DATA, "news.yaml"))["years"]:
-        manual[y["year"]] = [(i["date"], i["text"], i.get("link"))
-                             for i in y["items"]]
+        manual[y["year"]] = [(_fmt_news_date(i["date"]), i["text"],
+                              i.get("link")) for i in y["items"]]
 
     autos = {}
     for r in load_releases():
