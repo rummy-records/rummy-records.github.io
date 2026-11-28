@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 # rummy records リリースページ量産スクリプト（v8テンプレート準拠）
 # データ出典：release-data-20261122.md（検証済み）／ store-link-inventory-20261122.md
-import html, os
+import html, os, re
 
 from dataload import load_releases
-from common import (CSS_FOOTER_A, CSS_FOOTER_RULE, CSS_NAV,
+from common import (CSS_FOOTER_A, CSS_FOOTER_RULE, CSS_NAV, head_meta,
                     CSS_RELEASE_DARK, CSS_RELEASE_MAIN,
                     CSS_RELEASE_SECTIONS, CSS_RELEASE_TRACKS,
                     CSS_SNS, FOOTER_HTML, MORPH_JS, NAV_HTML, esc,
@@ -150,6 +150,8 @@ def render(r):
     else:
         staff_first, sections_after = "", sections_html
     mini_artist = r.get("mini_artist", r["artist"])
+    desc = " ".join(re.sub(r"<[^>]+>", " ", r.get("tagline") or "").split())[:110] \
+        or (r["artist"] + " — rummy records")
     return f"""<!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -157,7 +159,7 @@ def render(r):
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
 <title>{esc(r['title'])} — rummy records</title>
-{style_tag(CSS)}
+{head_meta(r['title'] + " — rummy records", desc, r['file'] + ".html", r.get('art', 'img/icon.png'))}{style_tag(CSS)}
 </head>
 <body>
   <div class="bg-glow" aria-hidden="true"><div class="blob"></div></div>

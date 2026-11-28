@@ -71,3 +71,23 @@ NAVBTN_STYLE_OVERRIDE = "  .navbtn { background:transparent; border-color:transp
 def style_tag(css):
     """<style> 本体 + 全ページ共通の navbtn 上書きルール。"""
     return "<style>" + css + NAVBTN_STYLE_OVERRIDE + "\n</style>"
+
+
+SITE_DESC = "ダンスミュージックを中心とする電子音楽専門ネットレーベル、rummy records（ラミーレコーズ）の公式サイト。"
+
+
+def head_meta(title, desc, path, image="img/icon.png"):
+    """OGP・description・favicon の共通タグ群。path はサイトルートからの相対パス。"""
+    url = "https://rummyrecords.com/" + path
+    img = "https://rummyrecords.com/" + image
+    return (
+        f'<meta name="description" content="{esc(desc)}">\n'
+        '<link rel="icon" href="img/icon.png" type="image/png">\n'
+        '<link rel="apple-touch-icon" href="img/icon.png">\n'
+        f'<meta property="og:title" content="{esc(title)}">\n'
+        '<meta property="og:type" content="website">\n'
+        f'<meta property="og:url" content="{url}">\n'
+        f'<meta property="og:image" content="{img}">\n'
+        f'<meta property="og:description" content="{esc(desc)}">\n'
+        '<meta name="twitter:card" content="summary_large_image">\n'
+    )

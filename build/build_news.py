@@ -5,7 +5,7 @@ import html, os
 from dataload import load_years
 from common import (CSS_DARK_COMMON, CSS_FOOTER_A, CSS_FOOTER_RULE,
                     CSS_HEAD, CSS_NAV, CSS_SNS, FOOTER_HTML, NAV_HTML,
-                    YEARJS, esc, navjs, style_tag)
+                    SITE_DESC, YEARJS, esc, head_meta, navjs, style_tag)
 
 OUT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "_site"))
 
@@ -52,7 +52,7 @@ doc = f"""<!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
 <title>NEWS — rummy records</title>
-{style_tag(CSS)}
+{head_meta("NEWS — rummy records", SITE_DESC, "news.html")}{style_tag(CSS)}
 </head>
 <body>{NAV}
   <a class="label" href="index.html">rummy records</a>
