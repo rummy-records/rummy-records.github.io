@@ -51,7 +51,7 @@ doc = f"""<!DOCTYPE html>
       <li><a href="https://x.com/zero_yon_nana">zero yon nana</a> <span class="role">(Co-organizer)</span></li>
       <li><a href="https://x.com/BSer_Lingi">BSer / Lingi</a></li>
       <li><a href="https://x.com/bnsk_kyuru">dusKape</a></li>
-      <li>nurumayu</li>
+      <li><a href="https://x.com/n_act">nurumayu</a></li>
     </ul>
   </div>
 {FOOTER_HTML}{NAVJS}
