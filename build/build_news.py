@@ -20,13 +20,13 @@ YEARS = load_years()
 
 CSS = (
     CSS_HEAD
-    + '  .card { width:100%; max-width:560px; background:var(--glass);\n    -webkit-backdrop-filter:blur(14px) saturate(1.2); backdrop-filter:blur(14px) saturate(1.2);\n    border:1px solid var(--line); border-radius:20px;\n    box-shadow:0 12px 34px rgba(40,50,60,.22), inset 0 1px 0 rgba(255,255,255,.65); padding:10px 22px 18px; }\n  .year { font-size:11px; letter-spacing:.3em; color:var(--accent); font-weight:600; margin:10px 0 4px;\n    position:sticky; top:8px; z-index:5; }\n  .year span { display:inline-block; width:64px; box-sizing:border-box; text-align:center; padding:5px 0 5px .3em; border-radius:10px;\n    background:transparent; border:1px solid transparent; box-shadow:none;\n    transition:background .25s ease, box-shadow .25s ease; }\n  .year.stuck span { background:rgba(255,255,255,.65);\n    -webkit-backdrop-filter:blur(14px) saturate(1.2); backdrop-filter:blur(14px) saturate(1.2);\n    box-shadow:0 2px 8px rgba(40,50,60,.10); }\n  .item { display:flex; gap:12px; padding:7px 0; border-bottom:1px solid var(--line-dark); font-size:13.5px; }\n  .item:last-child { border-bottom:none; }\n  .item .d { color:var(--muted); font-size:12px; width:60px; flex:none; padding-top:0; }\n  .item .d .pill { display:inline-block; padding:2px 9px 3px; border-radius:999px;\n    background:rgba(255,255,255,.5); border:1px solid var(--line);\n    -webkit-backdrop-filter:blur(8px) saturate(1.2); backdrop-filter:blur(8px) saturate(1.2); }\n  .item .d .dm { display:inline-block; width:15px; text-align:right; }\n  .item .d .dd { display:inline-block; width:15px; text-align:right; }\n  .item a { color:var(--ink); text-decoration:underline; text-underline-offset:3px; }\n  .item a:hover { color:var(--accent); }\n'
+    + '  .card { width:100%; max-width:560px; background:var(--glass);\n    -webkit-backdrop-filter:blur(14px) saturate(1.2); backdrop-filter:blur(14px) saturate(1.2);\n    border:1px solid var(--line); border-radius:20px;\n    box-shadow:0 12px 34px rgba(40,50,60,.22), inset 0 1px 0 rgba(255,255,255,.65); padding:10px 22px 18px; }\n  .year { font-size:11px; letter-spacing:.3em; color:var(--accent); font-weight:600; margin:10px 0 4px;\n    position:sticky; top:8px; z-index:5; }\n  .year span { display:inline-block; width:64px; box-sizing:border-box; text-align:center; padding:5px 0 5px .3em; border-radius:10px;\n    background:transparent; border:1px solid transparent; box-shadow:none;\n    transition:background .25s ease, box-shadow .25s ease; }\n  .year.stuck span { background:rgba(255,255,255,.65);\n    -webkit-backdrop-filter:blur(14px) saturate(1.2); backdrop-filter:blur(14px) saturate(1.2);\n    box-shadow:0 2px 8px rgba(40,50,60,.10); }\n  .item { display:flex; gap:12px; padding:7px 0; border-bottom:1px solid var(--line-dark); font-size:13.5px; }\n  .item:last-child { border-bottom:none; }\n  .item .d { color:var(--muted); font-size:12px; width:44px; flex:none; padding-top:2px; }\n  .item .d .dm { display:inline-block; width:15px; text-align:right; }\n  .item .d .dd { display:inline-block; width:15px; text-align:right; }\n  .item a { color:var(--ink); text-decoration:underline; text-underline-offset:3px; }\n  .item a:hover { color:var(--accent); }\n'
     + CSS_FOOTER_RULE
     + CSS_SNS
     + CSS_FOOTER_A
     + CSS_NAV
     + CSS_DARK_COMMON
-    + '    .year.stuck span { background:rgba(42,49,56,.65); box-shadow:0 2px 8px rgba(0,0,0,.35); }\n    .item .d .pill { background:rgba(42,49,56,.55); }\n  }\n'
+    + '    .year.stuck span { background:rgba(42,49,56,.65); box-shadow:0 2px 8px rgba(0,0,0,.35); }\n  }\n'
 )
 
 NAV = NAV_HTML
@@ -38,8 +38,8 @@ for year, items in YEARS:
         t = f'<a href="{link}.html">{esc(text)}</a>' if link else esc(text)
         if '/' in d:
             mm, dd = d.split('/', 1)
-            dhtml = (f'<span class="pill"><span class="dm">{esc(mm)}</span>.'
-                     f'<span class="dd">{esc(dd)}</span></span>')
+            dhtml = (f'<span class="dm">{esc(mm)}</span>.'
+                     f'<span class="dd">{esc(dd)}</span>')
         else:
             dhtml = esc(d)
         body.append(f'<div class="item"><span class="d">{dhtml}</span><span>{t}</span></div>')
