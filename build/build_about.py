@@ -49,7 +49,7 @@ doc = f"""<!DOCTYPE html>
     <ul>
       <li><a href="https://x.com/nennen2010">Nennen</a> <span class="role">(Organizer)</span></li>
       <li><a href="https://x.com/zero_yon_nana">zero yon nana</a> <span class="role">(Co-organizer)</span></li>
-      <li><a href="https://x.com/BSer_Lingi">BSer / Lingi</a></li>
+      <li><a href="https://x.com/bser_assistant">BSer / Lingi</a></li>
       <li><a href="https://x.com/bnsk_kyuru">dusKape</a></li>
       <li><a href="https://x.com/n_act">nurumayu</a></li>
     </ul>
